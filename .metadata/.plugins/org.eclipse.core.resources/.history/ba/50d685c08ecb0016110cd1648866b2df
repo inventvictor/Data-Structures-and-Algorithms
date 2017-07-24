@@ -1,0 +1,88 @@
+/*
+ * selection_sort.c
+ *
+ *  Created on: Dec 22, 2016
+ *      Author: inventor
+ */
+
+/*
+ *
+ * */
+#include <stdio.h>
+#include <stdbool.h>
+
+#define ARRAYSIZE 3
+
+int array[ARRAYSIZE] = {4,3,2};
+
+void printSortedArray(int arr[]);
+void swap(int *a_ptr, int *b_ptr);
+void selection_sort(int a[]);
+int getMin(int *arr_ptr, int size);
+
+int main()
+{
+	printSortedArray(array);
+	selection_sort(array);
+	printSortedArray(array);
+	return 0;
+	}
+
+void printSortedArray(int arr[])
+{
+	int i = 0;
+	printf("[");
+	for(i = 0; i < ARRAYSIZE; i++)
+	{
+		printf(" %d ", arr[i]);
+	}
+	printf("]\n");
+	}
+
+void swap(int *a_ptr, int *b_ptr)
+{
+	int c = *a_ptr;
+	*a_ptr = *b_ptr;
+	*b_ptr = c;
+	}
+
+void selection_sort(int a[])
+{
+	int i = 0, j = 0, ind_min = 0;
+	for(i = 0; i < ARRAYSIZE; i++)
+	{
+		ind_min = i;
+		for(j = i+1; j<ARRAYSIZE; j++)
+		{
+			if(a[j] < a[ind_min])
+			{
+				ind_min = j;
+			}
+		}
+		if(ind_min != i)
+		{
+			swap(&a[i], &a[ind_min]);
+		}
+	}
+	}
+
+int getMin(int a[], int size)
+{
+	int val = 0;
+	int *arr_ptr_1 = a, *arr_ptr_2 = &a[1];
+	while (arr_ptr_2 - a < size)
+	{
+		if (*arr_ptr_1 < *arr_ptr_2)
+		{
+			val = *arr_ptr_1;
+			arr_ptr_2++;
+		}
+		else
+		{
+			val = *arr_ptr_2;
+			arr_ptr_1++;
+			arr_ptr_2++;
+		}
+	}
+	return val;
+	}

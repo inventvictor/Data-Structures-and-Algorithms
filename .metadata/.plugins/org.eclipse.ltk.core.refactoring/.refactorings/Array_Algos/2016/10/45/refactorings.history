@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Algos/algos.c&apos; to &apos;array_algos.c&apos;" description="Rename resource &apos;algos.c&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="algos.c" name="array_algos.c" stamp="1477898877137" updateReferences="true"/>
+</session>

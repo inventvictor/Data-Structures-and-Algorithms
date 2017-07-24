@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Postfix_Expression_Algo/intArrayStack&apos; to &apos;intArrayStack.h&apos;" description="Rename resource &apos;intArrayStack&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="intArrayStack" name="intArrayStack.h" stamp="1479644320775" updateReferences="true"/>
+</session>

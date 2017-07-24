@@ -1,0 +1,15 @@
+13:44:56 **** Incremental Build of configuration Debug for project Postfix_Expression_Algo ****
+make all 
+Building file: ../infix_to_postfix_algo.c
+Invoking: Cross GCC Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"infix_to_postfix_algo.d" -MT"infix_to_postfix_algo.d" -o "infix_to_postfix_algo.o" "../infix_to_postfix_algo.c"
+Finished building: ../infix_to_postfix_algo.c
+ 
+Building target: Postfix_Expression_Algo
+Invoking: Cross GCC Linker
+gcc  -o "Postfix_Expression_Algo"  ./arrayStack.o ./infix_to_postfix_algo.o ./intArrayStack.o   
+Finished building target: Postfix_Expression_Algo
+ 
+
+13:44:56 Build Finished (took 188ms)
+

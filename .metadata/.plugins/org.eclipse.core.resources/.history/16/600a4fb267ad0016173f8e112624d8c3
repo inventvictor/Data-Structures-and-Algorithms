@@ -1,0 +1,113 @@
+#include <stdio.h>
+#include <stdbool.h>
+#include <stdlib.h>
+#include "arrayStack.h"
+
+
+bool isOperator(char op);
+int precedenceLevel(char op);
+
+
+char *infix = "29*2/3+5-7*5+6/7-34";
+char postfix[MAXSIZE] = {};
+char *jg;
+
+int main()
+{
+	int i = 0, k = 0, y = 0;
+	for(i=0; i<MAXSIZE; i++)
+	{
+		if(!isOperator(*infix))
+		{
+			postfix[k] = *infix;
+		}
+		else
+		{
+			if(stack_isEmpty())
+			{
+				stack_push(*infix);
+				postfix[k] = ' ';
+			}
+			else
+			{
+				if(precedenceLevel(*infix) < precedenceLevel(stack_peek()))
+				{
+					postfix[k] = stack_pop();
+					stack_push(*infix);
+				}
+				else if(precedenceLevel(*infix) == precedenceLevel(stack_peek()))
+				{
+					postfix[k] = stack_pop();
+					stack_push(*infix);
+				}
+				else if(precedenceLevel(*infix) > precedenceLevel(stack_peek()))
+				{
+					stack_push(*infix);
+					postfix[k] = ' ';
+				}
+			}
+		}
+		k++;
+		infix++;
+	}
+	while(!stack_isEmpty())
+	{
+		postfix[k] = stack_pop();
+		k++;
+	}
+
+//	for(y = 0; y<MAXSIZE; y++)
+//	{
+//		printf("postfix[%d] - %c\n", y, postfix[y]);
+//	}
+	jg = (char *)malloc(MAXSIZE * sizeof(char));
+	strcpy(jg, postfix);
+	printf("%s\n", jg);
+	return 0;
+	}
+
+int precedenceLevel(char op)
+{
+	int pre_level = 0;
+	switch (op) {
+		case '+':
+			pre_level = 1;
+			break;
+		case '-':
+			pre_level = 1;
+			break;
+		case '*':
+			pre_level = 2;
+			break;
+		case '/':
+			pre_level = 2;
+			break;
+		default:
+			pre_level = 0;
+			break;
+	}
+	return pre_level;
+	}
+
+bool isOperator(char op)
+{
+	bool b = false;
+	switch (op) {
+		case '+':
+			b = true;
+			break;
+		case '-':
+			b = true;
+			break;
+		case '*':
+			b = true;
+			break;
+		case '/':
+			b = true;
+			break;
+		default:
+			b = false;
+			break;
+	}
+	return b;
+	}

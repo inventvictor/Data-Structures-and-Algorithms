@@ -1,0 +1,3 @@
+buildConsole/keepLog=true
+buildConsole/logLocation=/home/inventor/eclipse_workspace/.metadata/.plugins/org.eclipse.cdt.ui/Sample FreeRTOS App.build.log
+eclipse.preferences.version=1

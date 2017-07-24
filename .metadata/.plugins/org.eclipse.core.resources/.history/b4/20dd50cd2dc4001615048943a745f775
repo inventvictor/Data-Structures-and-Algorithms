@@ -1,0 +1,103 @@
+#include <stdbool.h>
+#include <stdio.h>
+#include <string.h>
+
+#define MAXSIZE 5
+
+int array[MAXSIZE] = {};
+int *array_ptr_front = array;
+int *array_ptr_rear = array;
+int queue_counter = MAXSIZE;
+
+bool isFUll();
+bool enqueue(int data);
+int peek();
+bool isEmpty();
+int size();
+int dequeue();
+
+int main()
+{
+	printf("is Full - %d\n", isFUll());
+	enqueue(6);
+	enqueue(3);
+	enqueue(4);
+	enqueue(88);
+	enqueue(56);
+	int i = 0;
+	for(i = 0; i<MAXSIZE; i++)
+	{
+		printf("%d\n", array[i]);
+	}
+	printf("is Full - %d\n", isFUll());
+	printf("Value in front - %d\n", peek());
+	printf("asdfkdbgjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj\n");
+	dequeue();
+	dequeue();
+	dequeue();
+	for(i = 0; i<MAXSIZE; i++)
+	{
+		printf("%d\n", array[i]);
+	}
+	printf("is Full - %d\n", isFUll());
+	printf("Value in front - %d\n", peek());
+
+	return 0;
+	}
+
+bool isFUll()
+{
+	bool b = false;
+	if(queue_counter == 0)
+	{
+		b = true;
+	}
+	return b;
+	}
+
+bool enqueue(int data)
+{
+	bool b = false;
+	if(!isFUll())
+	{
+		*array_ptr_rear = data;
+		array_ptr_rear++;
+		queue_counter--;
+		b = true;
+	}
+	return b;
+	}
+
+int peek()
+{
+	return *array_ptr_front;
+	}
+
+bool isEmpty()
+{
+	bool b = false;
+	if(queue_counter == MAXSIZE)
+	{
+		b = true;
+	}
+	return b;
+	}
+
+int size()
+{
+	return queue_counter;
+	}
+
+int dequeue()
+{
+    int data = 0;
+	if(!isEmpty())
+	{
+		data = *array_ptr_front;
+		*array_ptr_front = 0;
+		array_ptr_front++;
+		&array[0] = array_ptr_front;
+		queue_counter++;
+	}
+	return data;
+	}

@@ -1,0 +1,30 @@
+15:39:56 **** Incremental Build of configuration Debug for project Algos ****
+make all 
+Building file: ../doubly_linked_list_algos.c
+Invoking: Cross GCC Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"doubly_linked_list_algos.d" -MT"doubly_linked_list_algos.d" -o "doubly_linked_list_algos.o" "../doubly_linked_list_algos.c"
+../doubly_linked_list_algos.c: In function ‘doublyLinkedList_insertFirst’:
+../doubly_linked_list_algos.c:88:30: warning: implicit declaration of function ‘malloc’ [-Wimplicit-function-declaration]
+  struct node* link = (struct node*) malloc(sizeof(struct node));
+                              ^
+../doubly_linked_list_algos.c:88:37: warning: incompatible implicit declaration of built-in function ‘malloc’ [enabled by default]
+  struct node* link = (struct node*) malloc(sizeof(struct node));
+                                     ^
+../doubly_linked_list_algos.c: In function ‘doublyLinkedList_insertLast’:
+../doubly_linked_list_algos.c:109:36: warning: incompatible implicit declaration of built-in function ‘malloc’ [enabled by default]
+  struct node* link = (struct node*)malloc(sizeof(struct node));
+                                    ^
+../doubly_linked_list_algos.c: In function ‘doublyLinkedList_insertAfter’:
+../doubly_linked_list_algos.c:194:40: warning: incompatible implicit declaration of built-in function ‘malloc’ [enabled by default]
+  struct node *newLink = (struct node*) malloc(sizeof(struct node));
+                                        ^
+Finished building: ../doubly_linked_list_algos.c
+ 
+Building target: Algos
+Invoking: Cross GCC Linker
+gcc  -o "Algos"  ./array_algos.o ./doubly_linked_list_algos.o ./linked_list_algos.o   
+Finished building target: Algos
+ 
+
+15:39:57 Build Finished (took 232ms)
+

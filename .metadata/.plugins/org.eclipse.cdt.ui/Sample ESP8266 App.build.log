@@ -1,0 +1,1511 @@
+11:15:48 **** Build of configuration Default for project Sample ESP8266 App ****
+make all 
+xtensa-lx106-elf-gcc -Wimplicit-function-declaration -fno-inline-functions -mlongcalls -mtext-section-literals -mno-serialize-volatile -I/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/include -I. -D__ETS__ -DICACHE_FLASH -DXTENSA -DUSE_US_TIMER -c user_main.c
+xtensa-lx106-elf-gcc -o a.out -nostdlib -L/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib -L/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/ld -T/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/ld/eagle.app.v6.ld -Wl,--no-check-sections -u call_user_start -Wl,-static -Wl,--start-group -lc -lgcc -lhal -lphy -lpp -lnet80211 -llwip -lwpa -lmain -ljson -lupgrade -lssl -lpwm -lsmartconfig  user_main.o uart.o -Wl,--end-group
+/home/inventor/esp8266/esp-open-sdk/xtensa-lx106-elf/lib/gcc/xtensa-lx106-elf/4.8.5/../../../../xtensa-lx106-elf/bin/ld: a.out section `.text' will not fit in region `iram1_0_seg'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(xtensa_vectors.o):(.text+0x18): undefined reference to `_xt_isr_handler'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(xtensa_vectors.o):(.text+0x93): undefined reference to `_xt_isr_handler'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(app_main.o): In function `esp_crc8':
+(.text+0x1e0): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(app_main.o): In function `esp_crc8':
+(.text+0x1f9): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(app_main.o): In function `uart_rx_one_char':
+(.irom0.text+0x3e0): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(app_main.o): In function `uart_rx_one_char':
+(.irom0.text+0x3e8): undefined reference to `vTaskDelete'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(app_main.o): In function `uart_rx_one_char':
+(.irom0.text+0x3f3): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(app_main.o): In function `wdt_init':
+(.irom0.text+0x44a): undefined reference to `vTaskDelete'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(app_main.o): In function `system_phy_freq_trace_enable':
+(.irom0.text+0x568): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(app_main.o): In function `flash_data_check':
+(.irom0.text+0x574): undefined reference to `zalloc'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(app_main.o): In function `flash_data_check':
+(.irom0.text+0x580): undefined reference to `user_rf_cal_sector_set'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(app_main.o): In function `flash_data_check':
+(.irom0.text+0x584): undefined reference to `pvPortZalloc'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(app_main.o): In function `flash_data_check':
+(.irom0.text+0x58c): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(app_main.o): In function `flash_data_check':
+(.irom0.text+0x594): undefined reference to `xTaskGenericCreate'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(app_main.o): In function `flash_data_check':
+(.irom0.text+0x598): undefined reference to `vTaskStartScheduler'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(app_main.o): In function `flash_data_check':
+(.irom0.text+0x5ab): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(app_main.o): In function `flash_data_check':
+(.irom0.text+0x66a): undefined reference to `zalloc'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(app_main.o): In function `flash_data_check':
+(.irom0.text+0x6dc): undefined reference to `user_rf_cal_sector_set'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(app_main.o): In function `flash_data_check':
+(.irom0.text+0x70e): undefined reference to `pvPortZalloc'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(app_main.o): In function `flash_data_check':
+(.irom0.text+0x889): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(app_main.o): In function `flash_data_check':
+(.irom0.text+0x90c): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(app_main.o): In function `flash_data_check':
+(.irom0.text+0x93b): undefined reference to `xTaskGenericCreate'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(app_main.o): In function `flash_data_check':
+(.irom0.text+0x941): undefined reference to `vTaskStartScheduler'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(app_main.o): In function `flash_data_check':
+(.irom0.text+0xb58): undefined reference to `uxTaskGetStackHighWaterMark'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(app_main.o): In function `flash_data_check':
+(.irom0.text+0xb67): undefined reference to `uxTaskGetStackHighWaterMark'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(ets_timer.o):(.irom0.text+0x45): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(ets_timer.o):(.irom0.text+0x56): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(ets_timer.o):(.irom0.text+0xc7): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(ets_timer.o): In function `ets_timer_setfn':
+(.irom0.text+0xe1): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(ets_timer.o): In function `ets_timer_setfn':
+(.irom0.text+0x199): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(ets_timer.o): In function `ets_timer_setfn':
+(.irom0.text+0x1bc): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(ets_timer.o): In function `ets_timer_arm_ms_us':
+(.irom0.text+0x282): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(ets_timer.o): In function `ets_timer_arm_ms_us':
+(.irom0.text+0x2a1): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(ets_timer.o): In function `ets_timer_arm_ms_us':
+(.irom0.text+0x318): undefined reference to `vTaskSuspendAll'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(ets_timer.o): In function `ets_timer_arm_ms_us':
+(.irom0.text+0x31c): undefined reference to `xTaskResumeAll'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(ets_timer.o): In function `ets_timer_arm_ms_us':
+(.irom0.text+0x320): undefined reference to `PendSV'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(ets_timer.o): In function `ets_timer_arm_us':
+(.irom0.text+0x32b): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(ets_timer.o): In function `ets_timer_done':
+(.irom0.text+0x35a): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(ets_timer.o): In function `ets_timer_done':
+(.irom0.text+0x360): undefined reference to `vTaskSuspendAll'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(ets_timer.o): In function `ets_timer_done':
+(.irom0.text+0x36d): undefined reference to `xTaskResumeAll'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(ets_timer.o): In function `ets_timer_done':
+(.irom0.text+0x377): undefined reference to `PendSV'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(ets_timer.o): In function `ets_timer_done':
+(.irom0.text+0x37d): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(ets_timer.o): In function `ets_timer_done':
+(.irom0.text+0x3ac): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(ets_timer.o): In function `ets_timer_handler_isr':
+(.irom0.text+0x3c4): undefined reference to `xQueueGenericSendFromISR'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(ets_timer.o): In function `ets_timer_handler_isr':
+(.irom0.text+0x3c8): undefined reference to `vTaskSwitchContext'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(ets_timer.o): In function `ets_timer_handler_isr':
+(.irom0.text+0x3f3): undefined reference to `xQueueGenericSendFromISR'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(ets_timer.o): In function `ets_timer_handler_isr':
+(.irom0.text+0x40b): undefined reference to `vTaskSwitchContext'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(ets_timer.o): In function `ets_timer_handler_isr':
+(.irom0.text+0x418): undefined reference to `xQueueGenericReceive'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(ets_timer.o): In function `ets_timer_handler_isr':
+(.irom0.text+0x42c): undefined reference to `xQueueGenericReceive'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(ets_timer.o): In function `ets_timer_handler_isr':
+(.irom0.text+0x454): undefined reference to `xQueueGenericCreate'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(ets_timer.o): In function `ets_timer_handler_isr':
+(.irom0.text+0x458): undefined reference to `_xt_isr_attach'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(ets_timer.o): In function `ets_timer_handler_isr':
+(.irom0.text+0x470): undefined reference to `xQueueGenericCreate'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(ets_timer.o): In function `ets_timer_handler_isr':
+(.irom0.text+0x491): undefined reference to `xTaskGenericCreate'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(ets_timer.o): In function `ets_timer_handler_isr':
+(.irom0.text+0x49e): undefined reference to `_xt_isr_attach'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(printf-stdarg.o): In function `putchar':
+(.text+0x1b8): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(printf-stdarg.o): In function `print':
+(.text+0x1d5): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(printf-stdarg.o): In function `print':
+(.text+0x2c1): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(printf-stdarg.o): In function `print':
+(.text+0x428): undefined reference to `xPortWantedSizeAlign'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(printf-stdarg.o): In function `print':
+(.text+0x430): undefined reference to `pvPortMalloc'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(printf-stdarg.o): In function `print':
+(.text+0x434): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(printf-stdarg.o): In function `printf':
+(.text+0x47b): undefined reference to `xPortWantedSizeAlign'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(printf-stdarg.o): In function `printf':
+(.text+0x4a9): undefined reference to `pvPortMalloc'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(printf-stdarg.o): In function `printf':
+(.text+0x4e9): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(spi_flash.o): In function `spi_flash_get_unique_id':
+(.text+0x351): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(spi_flash.o): In function `spi_flash_get_unique_id':
+(.text+0x3ab): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(spi_flash.o): In function `spi_flash_get_unique_id':
+(.text+0x3c7): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(spi_flash.o): In function `spi_flash_get_id':
+(.text+0x3f0): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(spi_flash.o): In function `spi_flash_get_id':
+(.text+0x40b): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(spi_flash.o): In function `spi_flash_get_id':
+(.text+0x457): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(spi_flash.o): In function `flash_gd25q32c_write_status':
+(.text+0x81b): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(spi_flash.o): In function `flash_gd25q32c_write_status':
+(.text+0x84a): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(spi_flash.o): In function `flash_gd25q32c_write_status':
+(.text+0x8b1): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(spi_flash.o): In function `flash_gd25q32c_write_status':
+(.text+0x8e4): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(spi_flash.o): In function `flash_gd25q32c_write_status':
+(.text+0x926): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(spi_flash.o): In function `flash_gd25q32c_write_status':
+(.text+0x937): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `system_restart_in_nmi':
+(.text+0xc7): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `system_restart_in_nmi':
+(.text+0x15f): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `system_restart_in_nmi':
+(.text+0x1e7): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `system_restart_in_nmi':
+(.text+0x1fd): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o):(.irom0.text+0x14): undefined reference to `xTimerCreate'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o):(.irom0.text+0x18): undefined reference to `xTaskGetTickCount'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o):(.irom0.text+0x1c): undefined reference to `xTimerGenericCommand'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o):(.irom0.text+0x54): undefined reference to `xTimerCreate'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o):(.irom0.text+0x97): undefined reference to `xTaskGetTickCount'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o):(.irom0.text+0xa8): undefined reference to `xTimerGenericCommand'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o):(.irom0.text+0x107): undefined reference to `vTaskSuspendAll'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o):(.irom0.text+0x1bd): undefined reference to `xTimerGenericCommand'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o):(.irom0.text+0x1ce): undefined reference to `xTaskResumeAll'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o):(.irom0.text+0x1d8): undefined reference to `PendSV'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o):(.irom0.text+0x1f3): undefined reference to `xTaskGetTickCount'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o):(.irom0.text+0x203): undefined reference to `xTimerGenericCommand'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `system_adc_read_fast':
+(.irom0.text+0x2f8): undefined reference to `vTaskDelay'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `system_adc_read_fast':
+(.irom0.text+0x324): undefined reference to `vTaskDelay'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `system_get_vdd33':
+(.irom0.text+0x35c): undefined reference to `pvPortMalloc'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `system_get_vdd33':
+(.irom0.text+0x370): undefined reference to `pvPortMalloc'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `system_restart':
+(.irom0.text+0x3b5): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `system_deep_sleep_instant':
+(.irom0.text+0xfb8): undefined reference to `xQueueGenericSend'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `system_deep_sleep_instant':
+(.irom0.text+0xfd5): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `system_deep_sleep':
+(.irom0.text+0x1020): undefined reference to `xQueueGenericSend'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `system_phy_set_tpw_via_vdd33':
+(.irom0.text+0x10b3): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `system_get_cpu_freq':
+(.irom0.text+0x114c): undefined reference to `xPortGetFreeHeapSize'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `system_get_cpu_freq':
+(.irom0.text+0x1155): undefined reference to `xPortGetFreeHeapSize'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `system_station_got_ip_set':
+(.irom0.text+0x128e): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `system_station_got_ip_set':
+(.irom0.text+0x12ca): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `system_station_got_ip_set':
+(.irom0.text+0x12d9): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `system_station_got_ip_set':
+(.irom0.text+0x12ea): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `system_station_got_ip_set':
+(.irom0.text+0x131d): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `system_station_got_ip_set':
+(.irom0.text+0x132c): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `system_station_got_ip_set':
+(.irom0.text+0x1346): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `system_print_meminfo':
+(.irom0.text+0x1389): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `system_print_meminfo':
+(.irom0.text+0x1395): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `system_print_meminfo':
+(.irom0.text+0x13a4): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `system_print_meminfo':
+(.irom0.text+0x13b6): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `system_get_free_heap_size':
+(.irom0.text+0x13e9): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `system_get_free_heap_size':
+(.irom0.text+0x13f8): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `system_get_rtc_time':
+(.irom0.text+0x1443): undefined reference to `xQueueGenericSend'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `system_get_data_of_array_16':
+(.irom0.text+0x148d): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `system_get_data_of_array_16':
+(.irom0.text+0x14a5): undefined reference to `pvPortMalloc'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `system_get_string_from_flash':
+(.irom0.text+0x14dd): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `system_get_string_from_flash':
+(.irom0.text+0x14e7): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_softap_dhcps_start':
+(.irom0.text+0x159d): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_softap_dhcps_status':
+(.irom0.text+0x162f): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_softap_dhcps_status':
+(.irom0.text+0x163c): undefined reference to `vTaskDelay'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_station_dhcpc_start':
+(.irom0.text+0x1655): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_station_dhcpc_stop':
+(.irom0.text+0x16e9): undefined reference to `pvPortMalloc'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_station_dhcpc_event':
+(.irom0.text+0x1788): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_get_opmode_default':
+(.irom0.text+0x18f6): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_get_opmode_default':
+(.irom0.text+0x190e): undefined reference to `pvPortMalloc'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_get_opmode_default':
+(.irom0.text+0x1998): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_get_opmode_default':
+(.irom0.text+0x199e): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_get_opmode_default':
+(.irom0.text+0x19f7): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `system_get_checksum':
+(.irom0.text+0x1a9c): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `system_get_checksum':
+(.irom0.text+0x1ab9): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_param_save_protect_with_check':
+(.irom0.text+0x1af4): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_param_save_protect_with_check':
+(.irom0.text+0x1b05): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `system_param_save_with_protect':
+(.irom0.text+0x1c7d): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `system_param_load':
+(.irom0.text+0x1d68): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `system_param_load':
+(.irom0.text+0x1d92): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_station_get_config':
+(.irom0.text+0x1e39): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_station_get_config_default':
+(.irom0.text+0x1e69): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_station_get_ap_info':
+(.irom0.text+0x1e9c): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_station_get_ap_info':
+(.irom0.text+0x1f2c): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_station_get_ap_info':
+(.irom0.text+0x1f35): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_station_get_ap_info':
+(.irom0.text+0x1f40): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_station_get_ap_info':
+(.irom0.text+0x1f63): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_station_ap_number_set':
+(.irom0.text+0x1f90): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_station_ap_number_set':
+(.irom0.text+0x1f9f): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_station_ap_number_set':
+(.irom0.text+0x201a): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_station_ap_number_set':
+(.irom0.text+0x2095): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_station_ap_number_set':
+(.irom0.text+0x20b0): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_station_ap_number_set':
+(.irom0.text+0x20cf): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_station_ap_number_set':
+(.irom0.text+0x215f): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_station_ap_number_set':
+(.irom0.text+0x2179): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_station_ap_number_set':
+(.irom0.text+0x218c): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_station_ap_number_set':
+(.irom0.text+0x219d): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_station_ap_number_set':
+(.irom0.text+0x21af): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_station_ap_number_set':
+(.irom0.text+0x21c2): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_station_ap_number_set':
+(.irom0.text+0x229c): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_station_ap_number_set':
+(.irom0.text+0x22b3): undefined reference to `pvPortMalloc'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_station_ap_check':
+(.irom0.text+0x2364): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_station_ap_check':
+(.irom0.text+0x237d): undefined reference to `pvPortMalloc'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_station_ap_change':
+(.irom0.text+0x242d): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_station_ap_change':
+(.irom0.text+0x2482): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_station_ap_change':
+(.irom0.text+0x24b7): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_station_ap_change':
+(.irom0.text+0x24d1): undefined reference to `pvPortMalloc'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_station_set_auto_connect':
+(.irom0.text+0x25a8): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_station_set_auto_connect':
+(.irom0.text+0x25ae): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_station_connect':
+(.irom0.text+0x2648): undefined reference to `pbkdf2_sha1'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_station_connect':
+(.irom0.text+0x265d): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_station_connect':
+(.irom0.text+0x26df): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_station_disconnect':
+(.irom0.text+0x27e2): undefined reference to `pbkdf2_sha1'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_station_recon_stop_dhcp':
+(.irom0.text+0x2818): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_station_get_connect_status':
+(.irom0.text+0x2830): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_station_set_reconnect_policy':
+(.irom0.text+0x2860): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_station_get_rssi':
+(.irom0.text+0x28b9): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_station_get_rssi':
+(.irom0.text+0x28fd): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_station_set_default_hostname':
+(.irom0.text+0x2939): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_station_set_default_hostname':
+(.irom0.text+0x2971): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_station_get_hostname':
+(.irom0.text+0x29bb): undefined reference to `pvPortZalloc'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_station_set_hostname':
+(.irom0.text+0x29db): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_station_set_hostname':
+(.irom0.text+0x29f0): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_station_set_hostname':
+(.irom0.text+0x2a06): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_station_set_hostname':
+(.irom0.text+0x2a21): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_station_set_hostname':
+(.irom0.text+0x2a4b): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_station_set_hostname':
+(.irom0.text+0x2a5e): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_station_set_hostname':
+(.irom0.text+0x2a6b): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_softap_cacl_mac':
+(.irom0.text+0x2ae8): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_softap_set_default_ssid':
+(.irom0.text+0x2bbd): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_softap_set_default_ssid':
+(.irom0.text+0x2bd4): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_softap_set_default_ssid':
+(.irom0.text+0x2c69): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_softap_set_default_ssid':
+(.irom0.text+0x2c78): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_softap_set_default_ssid':
+(.irom0.text+0x2ccf): undefined reference to `pvPortMalloc'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_softap_set_default_ssid':
+(.irom0.text+0x2ce5): undefined reference to `pvPortMalloc'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_softap_set_default_ssid':
+(.irom0.text+0x2cfd): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_softap_get_config_default':
+(.irom0.text+0x2dcf): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_softap_get_config_default':
+(.irom0.text+0x2ddf): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_softap_get_config_default':
+(.irom0.text+0x2e37): undefined reference to `pvPortMalloc'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_softap_get_config_default':
+(.irom0.text+0x2e56): undefined reference to `pvPortMalloc'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_softap_get_config_default':
+(.irom0.text+0x2e70): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_softap_get_config_default':
+(.irom0.text+0x2ebd): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_softap_get_config_default':
+(.irom0.text+0x2f6b): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_softap_get_config_default':
+(.irom0.text+0x2f7c): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_softap_get_config_default':
+(.irom0.text+0x3009): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_softap_get_config_default':
+(.irom0.text+0x3017): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_softap_get_config_default':
+(.irom0.text+0x304b): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_softap_get_config_default':
+(.irom0.text+0x3059): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_softap_set_config_current':
+(.irom0.text+0x3098): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_softap_set_config_current':
+(.irom0.text+0x30a6): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_softap_set_station_info':
+(.irom0.text+0x30c3): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_softap_set_station_info':
+(.irom0.text+0x30d1): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_softap_set_station_info':
+(.irom0.text+0x311c): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_softap_set_station_info':
+(.irom0.text+0x3133): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_softap_set_station_info':
+(.irom0.text+0x3158): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_softap_get_station_info':
+(.irom0.text+0x3204): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_softap_get_station_info':
+(.irom0.text+0x320d): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_softap_get_station_info':
+(.irom0.text+0x321b): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_softap_get_station_info':
+(.irom0.text+0x323d): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_softap_free_station_info':
+(.irom0.text+0x3262): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_softap_free_station_info':
+(.irom0.text+0x3294): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_softap_get_station_num':
+(.irom0.text+0x32cd): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_softap_get_station_num':
+(.irom0.text+0x32e8): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_softap_get_station_num':
+(.irom0.text+0x32f9): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_softap_get_station_num':
+(.irom0.text+0x3327): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_softap_deauth':
+(.irom0.text+0x3348): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_softap_deauth':
+(.irom0.text+0x3406): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_softap_deauth':
+(.irom0.text+0x3437): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_unregister_user_ie_manufacturer_recv_cb':
+(.irom0.text+0x3485): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_unregister_user_ie_manufacturer_recv_cb':
+(.irom0.text+0x34bc): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_set_user_ie':
+(.irom0.text+0x34cd): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_set_user_ie':
+(.irom0.text+0x34e7): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_set_user_ie':
+(.irom0.text+0x3504): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_set_user_ie':
+(.irom0.text+0x3532): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o):(.irom0.text+0x354f): more undefined references to `vPortExitCritical' follow
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_set_user_ie':
+(.irom0.text+0x35a7): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_set_user_ie':
+(.irom0.text+0x35b5): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_get_user_ie':
+(.irom0.text+0x35da): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_get_user_ie':
+(.irom0.text+0x35ef): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_unregister_vnd_ie_recv_cb':
+(.irom0.text+0x3621): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_unregister_vnd_ie_recv_cb':
+(.irom0.text+0x3630): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_unregister_vnd_ie_recv_cb':
+(.irom0.text+0x3651): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_unregister_vnd_ie_recv_cb':
+(.irom0.text+0x3672): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_set_vnd_ie':
+(.irom0.text+0x3685): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_set_vnd_ie':
+(.irom0.text+0x3695): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_set_vnd_ie':
+(.irom0.text+0x36a3): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_set_vnd_ie':
+(.irom0.text+0x36c8): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_set_vnd_ie':
+(.irom0.text+0x36d4): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_set_vnd_ie':
+(.irom0.text+0x36f8): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_set_vnd_ie':
+(.irom0.text+0x3703): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_set_vnd_ie':
+(.irom0.text+0x3719): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_set_vnd_ie':
+(.irom0.text+0x3726): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_set_vnd_ie':
+(.irom0.text+0x373f): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_set_vnd_ie':
+(.irom0.text+0x3762): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_get_vnd_ie':
+(.irom0.text+0x377b): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_get_phy_mode':
+(.irom0.text+0x379a): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_get_phy_mode':
+(.irom0.text+0x37a6): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_get_phy_mode':
+(.irom0.text+0x37be): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_get_phy_mode':
+(.irom0.text+0x37c7): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_set_phy_mode':
+(.irom0.text+0x37e1): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_set_phy_mode':
+(.irom0.text+0x37ef): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_set_phy_mode':
+(.irom0.text+0x3806): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_set_phy_mode':
+(.irom0.text+0x380f): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_set_phy_mode':
+(.irom0.text+0x382f): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_set_phy_mode':
+(.irom0.text+0x386d): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_set_phy_mode':
+(.irom0.text+0x3882): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_set_phy_mode':
+(.irom0.text+0x389d): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_set_sleep_type':
+(.irom0.text+0x38db): undefined reference to `xQueueGenericReceive'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_disable_gpio_wakeup':
+(.irom0.text+0x3922): undefined reference to `xQueueGenericCreate'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(user_interface.o): In function `wifi_get_sleep_type':
+(.irom0.text+0x3945): undefined reference to `xTaskGenericCreate'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(os_cpu_a.o):(.text+0x0): undefined reference to `vTaskSwitchContext'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(os_cpu_a.o): In function `vPortYield':
+(.text+0x23): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(os_cpu_a.o): In function `vPortYield':
+(.text+0x29): undefined reference to `vTaskSwitchContext'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(os_cpu_a.o): In function `vPortYield':
+(.text+0x2f): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(os_cpu_a.o): In function `vPortYield':
+(.text+0x3c): undefined reference to `pxCurrentTCB'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(os_cpu_a.o): In function `vPortYield':
+(.text+0x44): undefined reference to `xPortSysTickHandle'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(os_cpu_a.o): In function `_xt_int_exit':
+(.text+0xa3): undefined reference to `xPortSysTickHandle'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(os_cpu_a.o): In function `_xt_timer_int':
+(.text+0xc9): undefined reference to `vTaskSwitchContext'
+user_main.o:(.text+0x4): undefined reference to `os_printf_plus'
+user_main.o: In function `systemInitDoneCB':
+user_main.c:(.text+0x14): undefined reference to `os_printf_plus'
+user_main.c:(.text+0x34): undefined reference to `system_init_done_cb'
+user_main.o: In function `user_init':
+user_main.c:(.text+0x50): undefined reference to `system_init_done_cb'
+uart.o: In function `uart_tx_one_char':
+uart.c:(.text+0x88): undefined reference to `system_os_post'
+uart.o: In function `uart0_rx_intr_handler':
+uart.c:(.text+0x11a): undefined reference to `system_os_post'
+uart.c:(.text+0x15a): undefined reference to `system_os_post'
+uart.o:(.irom0.text+0x8): undefined reference to `UartDev'
+uart.o:(.irom0.text+0x10): undefined reference to `UartDev'
+uart.o:(.irom0.text+0x2c): undefined reference to `ets_isr_attach'
+uart.o: In function `uart_config':
+uart.c:(.irom0.text+0x65): undefined reference to `ets_isr_attach'
+uart.o: In function `UART_ResetFifo':
+uart.c:(.irom0.text+0x970): undefined reference to `ets_install_putc1'
+uart.o: In function `UART_ClearIntrStatus':
+uart.c:(.irom0.text+0x98a): undefined reference to `ets_install_putc1'
+uart.c:(.irom0.text+0x997): undefined reference to `ets_install_putc1'
+uart.c:(.irom0.text+0x9a0): undefined reference to `ets_install_putc1'
+uart.o: In function `UART_SetIntrEna':
+uart.c:(.irom0.text+0x9bc): undefined reference to `system_os_task'
+uart.c:(.irom0.text+0x9c0): undefined reference to `ets_isr_unmask'
+uart.c:(.irom0.text+0x9db): undefined reference to `system_os_task'
+uart.c:(.irom0.text+0x9fb): undefined reference to `ets_isr_unmask'
+uart.o: In function `UART_SetPrintPort':
+uart.c:(.irom0.text+0xa4f): undefined reference to `ets_isr_unmask'
+uart.c:(.irom0.text+0xa58): undefined reference to `ets_install_putc1'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libphy.a(phy_chip_v5_ana_romfunc.o): In function `rom_chip_v5_tx_init':
+(.irom0.text+0x7cc): undefined reference to `vPortETSIntrLock'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libphy.a(phy_chip_v5_ana_romfunc.o): In function `rom_chip_v5_tx_init':
+(.irom0.text+0x7d0): undefined reference to `vPortETSIntrUnlock'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libphy.a(phy_chip_v5_ana_romfunc.o): In function `rom_chip_v5_tx_init':
+(.irom0.text+0x7f0): undefined reference to `vPortETSIntrLock'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libphy.a(phy_chip_v5_ana_romfunc.o): In function `rom_chip_v5_tx_init':
+(.irom0.text+0x83a): undefined reference to `vPortETSIntrUnlock'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libphy.a(phy_chip_v5_ana_romfunc.o): In function `rom_i2c_readReg':
+(.irom0.text+0x8aa): undefined reference to `vPortETSIntrLock'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libphy.a(phy_chip_v5_ana_romfunc.o): In function `rom_i2c_readReg':
+(.irom0.text+0x8f7): undefined reference to `vPortETSIntrUnlock'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(if_hwctrl.o): In function `ic_set_vif':
+(.irom0.text+0x29f): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(if_hwctrl.o): In function `ic_set_vif':
+(.irom0.text+0x2d5): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(if_hwctrl.o): In function `ic_set_vif':
+(.irom0.text+0x310): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(if_hwctrl.o): In function `ic_set_sta':
+(.irom0.text+0x349): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(lmac.o): In function `lmacIsIdle':
+(.text+0x4b9): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(lmac.o): In function `lmacIsIdle':
+(.text+0x512): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(lmac.o): In function `lmacRecycleMPDU':
+(.text+0xd0c): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(lmac.o): In function `lmacRecycleMPDU':
+(.text+0xd45): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(lmac.o): In function `lmacRecycleMPDU':
+(.text+0xd58): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(lmac.o): In function `lmacRecycleMPDU':
+(.text+0xde2): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pm.o): In function `pm_is_gpio_int_trig':
+(.irom0.text+0x67): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pm.o): In function `pm_is_gpio_int_trig':
+(.irom0.text+0x9e): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pm.o): In function `pm_is_gpio_int_trig':
+(.irom0.text+0xb9): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pm.o): In function `pm_is_gpio_int_trig':
+(.irom0.text+0xca): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pm.o): In function `pm_set_sleep_time':
+(.irom0.text+0x1cc): undefined reference to `vTaskStepTick'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pm.o): In function `pm_set_sleep_time':
+(.irom0.text+0x3c7): undefined reference to `vTaskStepTick'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pm.o): In function `pm_set_sleep_time':
+(.irom0.text+0x3e3): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pm.o): In function `pm_set_sleep_time':
+(.irom0.text+0x468): undefined reference to `ResetCcountVal'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pm.o): In function `pm_set_sleep_time':
+(.irom0.text+0x55e): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pm.o): In function `pm_set_sleep_time':
+(.irom0.text+0x59b): undefined reference to `ResetCcountVal'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pm.o): In function `pm_suspend':
+(.irom0.text+0xb2f): undefined reference to `vTaskSuspendAll'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pm.o): In function `pm_suspend':
+(.irom0.text+0xbf2): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pm.o): In function `pm_suspend':
+(.irom0.text+0xc02): undefined reference to `xTaskResumeAll'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pm.o): In function `pm_suspend':
+(.irom0.text+0xc93): undefined reference to `pvPortZalloc'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pm.o): In function `pm_suspend':
+(.irom0.text+0xce5): undefined reference to `vTaskSuspendAll'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pm.o): In function `pm_suspend':
+(.irom0.text+0xd5d): undefined reference to `xTaskResumeAll'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pm.o): In function `pm_open':
+(.irom0.text+0x115c): undefined reference to `prvGetExpectedIdleTime'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pm.o): In function `pm_onBcnRx':
+(.irom0.text+0x11f4): undefined reference to `prvGetExpectedIdleTime'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pm.o): In function `pm_onBcnRx':
+(.irom0.text+0x1359): undefined reference to `vTaskSuspendAll'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pm.o): In function `pm_onBcnRx':
+(.irom0.text+0x136d): undefined reference to `xTaskResumeAll'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pm.o): In function `pm_onBcnRx':
+(.irom0.text+0x1377): undefined reference to `PendSV'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pm.o): In function `freertos_set_idle_cb':
+(.irom0.text+0x1824): undefined reference to `xQueueGenericCreate'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pm.o): In function `freertos_set_idle_cb':
+(.irom0.text+0x1843): undefined reference to `xTaskGenericCreate'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pm.o): In function `freertos_set_idle_cb':
+(.irom0.text+0x1bdd): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pm.o): In function `freertos_set_idle_cb':
+(.irom0.text+0x1bed): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pm.o): In function `freertos_set_idle_cb':
+(.irom0.text+0x1c03): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pm.o): In function `freertos_set_idle_cb':
+(.irom0.text+0x1c2b): undefined reference to `xQueueGenericSend'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pm.o): In function `freertos_set_idle_cb':
+(.irom0.text+0x1c63): undefined reference to `xQueueGenericReceive'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pm.o): In function `freertos_set_idle_cb':
+(.irom0.text+0x1c81): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pm.o): In function `pm_enable_gpio_wakeup':
+(.irom0.text+0x1cb6): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pm.o): In function `pm_enable_gpio_wakeup':
+(.irom0.text+0x1cc2): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pm.o): In function `pm_enable_gpio_wakeup':
+(.irom0.text+0x1cd9): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pm.o): In function `pm_enable_gpio_wakeup':
+(.irom0.text+0x1cdf): undefined reference to `vTaskSuspendAll'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pm.o): In function `pm_attach':
+(.irom0.text+0x1d14): undefined reference to `xTaskResumeAll'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pm.o): In function `pm_attach':
+(.irom0.text+0x1d1d): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pm.o): In function `pm_attach':
+(.irom0.text+0x1d34): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pm.o): In function `pm_attach':
+(.irom0.text+0x1d3a): undefined reference to `vTaskSuspendAll'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pm.o): In function `pm_attach':
+(.irom0.text+0x1d60): undefined reference to `xTaskResumeAll'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pm_for_bcn_only_mode.o): In function `fpm_allow_tx':
+(.irom0.text+0xe9): undefined reference to `vTaskSuspendAll'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pm_for_bcn_only_mode.o): In function `fpm_close':
+(.irom0.text+0x14d): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pm_for_bcn_only_mode.o): In function `fpm_close':
+(.irom0.text+0x158): undefined reference to `xTaskResumeAll'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pm_for_bcn_only_mode.o): In function `fpm_close':
+(.irom0.text+0x197): undefined reference to `pvPortZalloc'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pm_for_bcn_only_mode.o): In function `fpm_close':
+(.irom0.text+0x1ae): undefined reference to `vTaskSuspendAll'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pm_for_bcn_only_mode.o): In function `fpm_close':
+(.irom0.text+0x1ee): undefined reference to `xTaskResumeAll'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pm_for_bcn_only_mode.o): In function `fpm_attach':
+(.irom0.text+0x4bf): undefined reference to `vTaskStepTick'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pm_for_bcn_only_mode.o): In function `fpm_attach':
+(.irom0.text+0x4db): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pm_for_bcn_only_mode.o): In function `fpm_attach':
+(.irom0.text+0x65e): undefined reference to `vTaskSuspendAll'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pm_for_bcn_only_mode.o): In function `fpm_attach':
+(.irom0.text+0x698): undefined reference to `xTaskResumeAll'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pm_for_bcn_only_mode.o): In function `fpm_do_wakeup':
+(.irom0.text+0x887): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pm_for_bcn_only_mode.o): In function `fpm_do_wakeup':
+(.irom0.text+0x8c2): undefined reference to `ResetCcountVal'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pm_for_bcn_only_mode.o): In function `fpm_do_wakeup':
+(.irom0.text+0xbf9): undefined reference to `vTaskSuspendAll'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pm_for_bcn_only_mode.o): In function `fpm_do_wakeup':
+(.irom0.text+0xc83): undefined reference to `xTaskResumeAll'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pp.o):(.text+0x5c): undefined reference to `ShowCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pp.o):(.text+0xb6): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pp.o):(.text+0xdc): undefined reference to `ShowCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pp.o):(.text+0x127): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pp.o):(.text+0x162): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pp.o):(.text+0x1d6): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pp.o):(.text+0x20a): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pp.o):(.text+0x22f): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pp.o): In function `ppProcessTxQ':
+(.text+0x26b): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pp.o): In function `ppProcessTxQ':
+(.text+0x2af): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pp.o): In function `ppProcessTxQ':
+(.text+0x2cb): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pp.o): In function `ppProcessTxQ':
+(.text+0x30a): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pp.o): In function `ppProcessTxQ':
+(.text+0x326): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pp.o): In function `ppFetchTxQFirstAvail':
+(.text+0x355): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pp.o): In function `ppFetchTxQFirstAvail':
+(.text+0x374): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pp.o): In function `ppDequeueTxQ':
+(.text+0x3d9): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pp.o): In function `ppDequeueTxQ':
+(.text+0x3f5): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pp.o): In function `ppRollBackTxQ':
+(.text+0x40b): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pp.o): In function `ppRollBackTxQ':
+(.text+0x427): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pp.o): In function `ppEnqueueTxDone':
+(.text+0x496): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pp.o): In function `ppEnqueueTxDone':
+(.text+0x4b1): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pp.o): In function `ppEnqueueRxq':
+(.text+0x80f): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pp.o): In function `ppEnqueueRxq':
+(.text+0x843): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pp.o): In function `ppEnqueueRxq':
+(.text+0x89a): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pp.o): In function `ppEnqueueRxq':
+(.text+0x8e0): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pp.o): In function `ppEnqueueRxq':
+(.text+0x8ef): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pp.o): In function `ppEnqueueRxq':
+(.text+0x90d): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pp.o): In function `ppEnqueueRxq':
+(.text+0x930): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pp.o): In function `ppEnqueueRxq':
+(.text+0x94a): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pp.o): In function `ppEnqueueRxq':
+(.text+0x978): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pp.o): In function `ppEnqueueRxq':
+(.text+0x991): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pp.o): In function `ppEnqueueRxq':
+(.text+0x9e8): undefined reference to `xQueueGenericSendFromISR'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pp.o): In function `ppEnqueueRxq':
+(.text+0xa44): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pp.o): In function `ppEnqueueRxq':
+(.text+0xa74): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pp.o): In function `ppEnqueueRxq':
+(.text+0xa86): undefined reference to `xQueueGenericSendFromISR'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pp.o): In function `ppEnqueueRxq':
+(.text+0xacc): undefined reference to `uxQueueMessagesWaitingFromISR'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pp.o): In function `ppEnqueueRxq':
+(.text+0xad0): undefined reference to `PendSV'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pp.o): In function `ppEnqueueRxq':
+(.text+0xad4): undefined reference to `xQueueGenericSend'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pp.o): In function `ppEnqueueRxq':
+(.text+0xaed): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pp.o): In function `ppEnqueueRxq':
+(.text+0xb29): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pp.o): In function `ppDiscardMPDU':
+(.text+0xb51): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pp.o): In function `ppDiscardMPDU':
+(.text+0xb82): undefined reference to `uxQueueMessagesWaitingFromISR'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pp.o): In function `MacIsrSigPostDefHdl':
+(.text+0xbcf): undefined reference to `PendSV'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pp.o): In function `MacIsrSigPostDefHdl':
+(.text+0xbed): undefined reference to `xQueueGenericSend'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pp.o): In function `MacIsrSigPostDefHdl':
+(.text+0xc2f): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pp.o): In function `MacIsrSigPostDefHdl':
+(.text+0xc8c): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pp.o): In function `MacIsrSigPostDefHdl':
+(.text+0xcac): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pp.o): In function `pp_soft_wdt_restart':
+(.irom0.text+0x131): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pp.o): In function `RxNodeNum':
+(.irom0.text+0x142): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pp.o): In function `pp_enable_noise_timer':
+(.irom0.text+0x231): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pp.o): In function `pp_enable_noise_timer':
+(.irom0.text+0x23f): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pp.o): In function `pp_disable_idle_timer':
+(.irom0.text+0x3be): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pp.o): In function `pp_enable_idle_timer':
+(.irom0.text+0x3fe): undefined reference to `xQueueGenericReceive'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pp.o): In function `pp_enable_idle_timer':
+(.irom0.text+0x40c): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pp.o): In function `pp_try_enable_idle_timer':
+(.irom0.text+0x43e): undefined reference to `pvPortZalloc'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pp.o): In function `pp_try_enable_idle_timer':
+(.irom0.text+0x45b): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pp.o): In function `ppProcessRxPktHdr':
+(.irom0.text+0x495): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pp.o): In function `ppProcessRxPktHdr':
+(.irom0.text+0x4fd): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pp.o): In function `ppProcessRxPktHdr':
+(.irom0.text+0x532): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pp.o): In function `ppProcessRxPktHdr':
+(.irom0.text+0x546): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pp.o): In function `ppProcessRxPktHdr':
+(.irom0.text+0x57b): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pp.o): In function `ppProcessRxPktHdr':
+(.irom0.text+0x59a): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pp.o): In function `ppTask':
+(.irom0.text+0x5c7): undefined reference to `pvPortZalloc'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pp.o): In function `ppTask':
+(.irom0.text+0x5e3): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pp.o): In function `ppTask':
+(.irom0.text+0x61e): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pp.o): In function `ppTask':
+(.irom0.text+0x62c): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pp.o): In function `ppTask':
+(.irom0.text+0x662): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pp.o): In function `ppTask':
+(.irom0.text+0x671): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pp.o): In function `ppTask':
+(.irom0.text+0x6a8): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pp.o): In function `ppTask':
+(.irom0.text+0x6d4): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pp.o): In function `ppTask':
+(.irom0.text+0x709): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pp.o): In function `ppTask':
+(.irom0.text+0x71a): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pp.o): In function `ppTask':
+(.irom0.text+0x74f): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pp.o): In function `ppTask':
+(.irom0.text+0x894): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pp.o): In function `ppTask':
+(.irom0.text+0x8c2): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pp.o): In function `ppTask':
+(.irom0.text+0x8e7): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pp.o): In function `ppTask':
+(.irom0.text+0x8fd): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pp.o): In function `ppTask':
+(.irom0.text+0x929): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pp.o): In function `ppTask':
+(.irom0.text+0x95e): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pp.o): In function `ppTask':
+(.irom0.text+0x979): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pp.o): In function `ppTask':
+(.irom0.text+0x9a5): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pp.o): In function `ppTask':
+(.irom0.text+0x9c1): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pp.o): In function `ppTask':
+(.irom0.text+0x9ed): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pp.o): In function `ppTxPkt':
+(.irom0.text+0xae5): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pp.o): In function `ppTxPkt':
+(.irom0.text+0xba3): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pp.o): In function `ppTxPkt':
+(.irom0.text+0xbe4): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pp.o): In function `DefFreqCalTimerCB':
+(.irom0.text+0x19de): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pp.o): In function `DefFreqCalTimerCB':
+(.irom0.text+0x1a1b): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pp.o): In function `DefFreqCalTimerCB':
+(.irom0.text+0x1a4b): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pp.o): In function `DefFreqCalTimerCB':
+(.irom0.text+0x1a6f): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pp.o): In function `DefFreqCalTimerCB':
+(.irom0.text+0x1a8d): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pp.o): In function `DefFreqCalTimerCB':
+(.irom0.text+0x1aad): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pp.o): In function `DefFreqCalTimerCB':
+(.irom0.text+0x1acf): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pp.o): In function `DefFreqCalTimerCB':
+(.irom0.text+0x1af3): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pp.o): In function `DefFreqCalTimerCB':
+(.irom0.text+0x1b11): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pp.o): In function `DefFreqCalTimerCB':
+(.irom0.text+0x1b31): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pp.o): In function `DefFreqCalTimerCB':
+(.irom0.text+0x1c03): undefined reference to `xQueueGenericCreate'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pp.o): In function `DefFreqCalTimerCB':
+(.irom0.text+0x1c25): undefined reference to `xTaskGenericCreate'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pp.o): In function `DefFreqCalTimerCB':
+(.irom0.text+0x1dc2): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(pp.o): In function `DefFreqCalTimerCB':
+(.irom0.text+0x1e10): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(wdev.o):(.text+0x49f): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(wdev.o): In function `wDev_MacTimSetFunc':
+(.text+0x516): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(wdev.o): In function `wDev_MacTimArm':
+(.text+0x533): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(wdev.o): In function `wDev_MacTimArm':
+(.text+0x5aa): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(wdev.o): In function `Tx_Copy2Queue':
+(.text+0xbcf): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(wdev.o): In function `wDev_SetWaitingQueue':
+(.text+0xc80): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(wdev.o): In function `wDev_SetFrameAckType':
+(.text+0xd3e): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(wdev.o): In function `wDev_AppendRxBlocks':
+(.text+0xd94): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(wdev.o): In function `wDev_AppendRxBlocks':
+(.text+0xe62): undefined reference to `pvPortMalloc'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(wdev.o): In function `wDev_AppendRxBlocks':
+(.text+0xe95): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(wdev.o): In function `wDev_AppendRxBlocks':
+(.text+0xefe): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(wdev.o): In function `wDev_AppendRxBlocks':
+(.text+0xf0f): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(wdev.o): In function `wDev_AppendRxAmpduLensBlocks':
+(.text+0x1000): undefined reference to `pvPortMalloc'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(wdev.o): In function `wDev_GetBAInfo':
+(.text+0x102d): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(wdev.o): In function `wDev_GetBAInfo':
+(.text+0x1093): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(wdev.o): In function `wDev_GetBAInfo':
+(.text+0x10a4): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(wdev.o): In function `wDev_GetBAInfo':
+(.text+0x112e): undefined reference to `pvPortMalloc'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(wdev.o): In function `wDev_GetBAInfo':
+(.text+0x1164): undefined reference to `pvPortMalloc'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(wdev.o): In function `wDev_GetBAInfo':
+(.text+0x1174): undefined reference to `pvPortMalloc'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(wdev.o): In function `wDev_GetBAInfo':
+(.text+0x12f4): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(wdev.o): In function `wDev_Crypto_Disable':
+(.irom0.text+0x9db): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(wdev.o): In function `wDevDisableRx':
+(.irom0.text+0xa17): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(wdev.o): In function `wdev_go_sniffer':
+(.irom0.text+0xaeb): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(wdev.o): In function `wdev_go_sniffer':
+(.irom0.text+0xb2d): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(esf_buf.o): In function `esf_rx_buf_alloc':
+(.text+0x2d): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(esf_buf.o): In function `esf_rx_buf_alloc':
+(.text+0x6c): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(esf_buf.o):(.irom0.text+0x41): undefined reference to `pvPortMalloc'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(esf_buf.o):(.irom0.text+0x52): undefined reference to `pvPortMalloc'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(esf_buf.o):(.irom0.text+0x64): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(esf_buf.o):(.irom0.text+0x7c): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(esf_buf.o):(.irom0.text+0xb4): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(esf_buf.o): In function `esf_buf_alloc':
+(.irom0.text+0xe0): undefined reference to `pvPortMalloc'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(esf_buf.o): In function `esf_buf_alloc':
+(.irom0.text+0xf2): undefined reference to `pvPortMalloc'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(esf_buf.o): In function `esf_buf_alloc':
+(.irom0.text+0x104): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(esf_buf.o): In function `esf_buf_alloc':
+(.irom0.text+0x11a): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(esf_buf.o): In function `esf_buf_alloc':
+(.irom0.text+0x154): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(esf_buf.o): In function `esf_buf_alloc':
+(.irom0.text+0x177): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(esf_buf.o): In function `esf_buf_alloc':
+(.irom0.text+0x1b3): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(esf_buf.o): In function `esf_buf_alloc':
+(.irom0.text+0x1fd): undefined reference to `pvPortZalloc'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(esf_buf.o): In function `esf_buf_alloc':
+(.irom0.text+0x20e): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(esf_buf.o): In function `esf_buf_alloc':
+(.irom0.text+0x21d): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(esf_buf.o): In function `esf_buf_alloc':
+(.irom0.text+0x243): undefined reference to `pvPortMalloc'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(esf_buf.o): In function `esf_buf_alloc':
+(.irom0.text+0x254): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(esf_buf.o): In function `esf_buf_alloc':
+(.irom0.text+0x263): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(esf_buf.o): In function `esf_buf_alloc':
+(.irom0.text+0x272): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(esf_buf.o): In function `esf_buf_alloc':
+(.irom0.text+0x290): undefined reference to `pvPortMalloc'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(esf_buf.o): In function `esf_buf_alloc':
+(.irom0.text+0x2a1): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(esf_buf.o): In function `esf_buf_alloc':
+(.irom0.text+0x2b0): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(esf_buf.o): In function `esf_buf_alloc':
+(.irom0.text+0x2e2): undefined reference to `pvPortMalloc'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(esf_buf.o): In function `esf_buf_alloc':
+(.irom0.text+0x2f3): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(esf_buf.o): In function `esf_buf_alloc':
+(.irom0.text+0x302): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(esf_buf.o): In function `esf_buf_alloc':
+(.irom0.text+0x311): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(esf_buf.o): In function `esf_buf_alloc':
+(.irom0.text+0x347): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(esf_buf.o): In function `esf_buf_alloc':
+(.irom0.text+0x354): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(esf_buf.o):(.irom0.text+0x361): more undefined references to `vPortFree' follow
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(esf_buf.o): In function `esf_buf_alloc':
+(.irom0.text+0x398): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(esf_buf.o): In function `esf_buf_alloc':
+(.irom0.text+0x3d0): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(esf_buf.o): In function `esf_buf_alloc':
+(.irom0.text+0x3e3): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(esf_buf.o): In function `esf_buf_alloc':
+(.irom0.text+0x3f0): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(esf_buf.o): In function `esf_buf_alloc':
+(.irom0.text+0x3fd): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(esf_buf.o): In function `esf_buf_alloc':
+(.irom0.text+0x40a): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(esf_buf.o): In function `esf_buf_alloc':
+(.irom0.text+0x42d): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(esf_buf.o): In function `esf_buf_alloc':
+(.irom0.text+0x461): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(esf_buf.o): In function `esf_buf_alloc':
+(.irom0.text+0x484): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(esf_buf.o): In function `esf_buf_recycle':
+(.irom0.text+0x4b8): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(esf_buf.o): In function `esf_buf_recycle':
+(.irom0.text+0x4d8): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libpp.a(esf_buf.o): In function `esf_buf_recycle':
+(.irom0.text+0x50c): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libnet80211.a(ieee80211.o): In function `ieee80211_find_channel_byieee':
+(.irom0.text+0x334): undefined reference to `pvPortZalloc'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libnet80211.a(ieee80211.o): In function `ieee80211_find_channel_byieee':
+(.irom0.text+0x353): undefined reference to `pvPortZalloc'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libnet80211.a(ieee80211.o): In function `wifi_mode_set':
+(.irom0.text+0x3da): undefined reference to `pvPortZalloc'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libnet80211.a(ieee80211.o): In function `wifi_mode_set':
+(.irom0.text+0x3f1): undefined reference to `pvPortZalloc'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libnet80211.a(ieee80211.o): In function `wifi_mode_set':
+(.irom0.text+0x42b): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libnet80211.a(ieee80211.o): In function `wifi_mode_set':
+(.irom0.text+0x43a): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libnet80211.a(ieee80211.o): In function `wifi_mode_set':
+(.irom0.text+0x45a): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libnet80211.a(ieee80211.o): In function `wifi_mode_set':
+(.irom0.text+0x467): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libnet80211.a(ieee80211.o): In function `wifi_mode_set':
+(.irom0.text+0x48a): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libnet80211.a(ieee80211.o):(.irom0.text+0x49e): more undefined references to `vPortFree' follow
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libnet80211.a(ieee80211_hostap.o):(.irom0.text+0x64): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libnet80211.a(ieee80211_hostap.o):(.irom0.text+0xa3): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libnet80211.a(ieee80211_hostap.o):(.irom0.text+0x300): undefined reference to `pvPortZalloc'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libnet80211.a(ieee80211_hostap.o):(.irom0.text+0x314): undefined reference to `pvPortZalloc'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libnet80211.a(ieee80211_hostap.o):(.irom0.text+0x328): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libnet80211.a(ieee80211_hostap.o):(.irom0.text+0x338): undefined reference to `pvPortZalloc'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libnet80211.a(ieee80211_hostap.o):(.irom0.text+0x34c): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libnet80211.a(ieee80211_hostap.o):(.irom0.text+0x35a): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libnet80211.a(ieee80211_hostap.o):(.irom0.text+0x3be): undefined reference to `pvPortZalloc'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libnet80211.a(ieee80211_hostap.o):(.irom0.text+0x42a): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libnet80211.a(ieee80211_hostap.o):(.irom0.text+0x47a): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libnet80211.a(ieee80211_hostap.o):(.irom0.text+0x490): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libnet80211.a(ieee80211_hostap.o):(.irom0.text+0x4a4): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libnet80211.a(ieee80211_hostap.o):(.irom0.text+0x4ba): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libnet80211.a(ieee80211_hostap.o):(.irom0.text+0x4d0): more undefined references to `vPortFree' follow
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libnet80211.a(ieee80211_hostap.o): In function `ieee80211_hostap_attach':
+(.irom0.text+0x6a2): undefined reference to `vTaskSuspendAll'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libnet80211.a(ieee80211_hostap.o): In function `ieee80211_hostap_attach':
+(.irom0.text+0x6de): undefined reference to `xTaskResumeAll'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libnet80211.a(ieee80211_hostap.o): In function `hostap_input':
+(.irom0.text+0xb56): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libnet80211.a(ieee80211_hostap.o): In function `hostap_input':
+(.irom0.text+0x11c6): undefined reference to `xQueueGenericSend'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libnet80211.a(ieee80211_hostap.o): In function `hostap_input':
+(.irom0.text+0x13e1): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libnet80211.a(ieee80211_hostap.o): In function `hostap_input':
+(.irom0.text+0x13f9): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libnet80211.a(ieee80211_hostap.o): In function `freqcal_scan_done':
+(.irom0.text+0x1891): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libnet80211.a(ieee80211_hostap.o): In function `freqcal_scan_done':
+(.irom0.text+0x18d7): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libnet80211.a(ieee80211_hostap.o): In function `freqcal_scan_done':
+(.irom0.text+0x1952): undefined reference to `pvPortMalloc'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libnet80211.a(ieee80211_hostap.o): In function `freqcal_scan_done':
+(.irom0.text+0x1a62): undefined reference to `xTaskResumeAll'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libnet80211.a(ieee80211_hostap.o): In function `freqcal_scan_done':
+(.irom0.text+0x1a79): undefined reference to `vTaskSuspendAll'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libnet80211.a(ieee80211_hostap.o): In function `freqcal_scan_done':
+(.irom0.text+0x1af4): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libnet80211.a(ieee80211_hostap.o): In function `freqcal_scan_done':
+(.irom0.text+0x1b26): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libnet80211.a(ieee80211_hostap.o): In function `freqcal_scan_done':
+(.irom0.text+0x1b39): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libnet80211.a(ieee80211_input.o): In function `ieee80211_setup_rates':
+(.irom0.text+0x225): undefined reference to `pvPortMalloc'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libnet80211.a(ieee80211_mesh_quick.o): In function `ieee80211_mesh_quick_init':
+(.irom0.text+0x62): undefined reference to `pvPortZalloc'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libnet80211.a(ieee80211_mesh_quick.o): In function `ieee80211_mesh_quick_init':
+(.irom0.text+0x93): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libnet80211.a(ieee80211_output.o):(.irom0.text+0x1d): undefined reference to `vTaskSuspendAll'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libnet80211.a(ieee80211_output.o):(.irom0.text+0x4c): undefined reference to `xTaskResumeAll'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libnet80211.a(ieee80211_output.o):(.irom0.text+0x6c): undefined reference to `xTaskResumeAll'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libnet80211.a(ieee80211_output.o): In function `ieee80211_output_pbuf':
+(.irom0.text+0x256): undefined reference to `xTaskResumeAll'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libnet80211.a(ieee80211_output.o): In function `ieee80211_output_pbuf':
+(.irom0.text+0x272): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libnet80211.a(ieee80211_output.o): In function `ieee80211_output_pbuf':
+(.irom0.text+0x28a): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libnet80211.a(ieee80211_output.o): In function `ieee80211_output_pbuf':
+(.irom0.text+0x294): undefined reference to `xTaskResumeAll'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libnet80211.a(ieee80211_output.o): In function `ieee80211_output_pbuf':
+(.irom0.text+0x2b0): undefined reference to `xTaskResumeAll'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libnet80211.a(ieee80211_output.o): In function `ieee80211_send_setup':
+(.irom0.text+0x4c0): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libnet80211.a(ieee80211_output.o): In function `ieee80211_mgmt_output':
+(.irom0.text+0x4d8): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libnet80211.a(ieee80211_output.o): In function `ieee80211_send_nulldata':
+(.irom0.text+0x609): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libnet80211.a(ieee80211_output.o): In function `ieee80211_send_nulldata':
+(.irom0.text+0x61f): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libnet80211.a(ieee80211_output.o): In function `ieee80211_send_mgmt':
+(.irom0.text+0x1649): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libnet80211.a(ieee80211_output.o): In function `ieee80211_send_mgmt':
+(.irom0.text+0x1661): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libnet80211.a(ieee80211_output.o): In function `ieee80211_alloc_proberesp':
+(.irom0.text+0x17db): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libnet80211.a(ieee80211_output.o): In function `ieee80211_alloc_proberesp':
+(.irom0.text+0x17f1): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libnet80211.a(ieee80211_phy.o): In function `ieee80211_phy_type_get':
+(.irom0.text+0x62): undefined reference to `pvPortZalloc'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libnet80211.a(ieee80211_phy.o): In function `ieee80211_setup_ratetable':
+(.irom0.text+0xba): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libnet80211.a(ieee80211_power.o): In function `ieee80211_pwrsave':
+(.irom0.text+0xe4): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libnet80211.a(ieee80211_power.o): In function `pwrsave_flushq':
+(.irom0.text+0xfc): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libnet80211.a(ieee80211_scan.o): In function `scan_start':
+(.irom0.text+0x2fd): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libnet80211.a(ieee80211_scan.o): In function `scan_start':
+(.irom0.text+0x315): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libnet80211.a(ieee80211_scan.o): In function `scan_pm_channel_op_cb':
+(.irom0.text+0x423): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libnet80211.a(ieee80211_scan.o): In function `scan_pm_channel_op_cb':
+(.irom0.text+0x438): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libnet80211.a(ieee80211_scan.o): In function `scan_pm_channel_op_cb':
+(.irom0.text+0x59e): undefined reference to `xQueueGenericSend'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libnet80211.a(ieee80211_scan.o): In function `scan_clear_channles':
+(.irom0.text+0xac0): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libnet80211.a(ieee80211_scan.o): In function `scan_clear_channles':
+(.irom0.text+0xb0f): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libnet80211.a(ieee80211_scan.o): In function `scan_set_desChan':
+(.irom0.text+0xb22): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libnet80211.a(ieee80211_scan.o): In function `scan_get_type':
+(.irom0.text+0xb31): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libnet80211.a(ieee80211_scan.o): In function `cannel_scan_connect_state':
+(.irom0.text+0xb3e): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libnet80211.a(ieee80211_scan.o): In function `scan_check_hidden':
+(.irom0.text+0xbb9): undefined reference to `pvPortZalloc'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libnet80211.a(ieee80211_scan.o): In function `scan_check_hidden':
+(.irom0.text+0xbd1): undefined reference to `pvPortZalloc'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libnet80211.a(ieee80211_scan.o): In function `scan_check_hidden':
+(.irom0.text+0xbe3): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libnet80211.a(ieee80211_scan.o): In function `scan_profile_check':
+(.irom0.text+0xc86): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libnet80211.a(ieee80211_scan.o): In function `scan_profile_check':
+(.irom0.text+0xc9f): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libnet80211.a(ieee80211_scan.o): In function `scan_profile_check':
+(.irom0.text+0xcb2): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libnet80211.a(ieee80211_scan.o): In function `scan_profile_check':
+(.irom0.text+0xcd6): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libnet80211.a(ieee80211_sta.o): In function `ieee80211_sta_new_state':
+(.irom0.text+0x2ab): undefined reference to `xQueueGenericSend'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libnet80211.a(ieee80211_sta.o): In function `ieee80211_sta_new_state':
+(.irom0.text+0x356): undefined reference to `xQueueGenericSend'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libnet80211.a(ieee80211_sta.o): In function `sta_input':
+(.irom0.text+0x866): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libnet80211.a(ieee80211_sta.o): In function `ieee80211_parse_wmeparams':
+(.irom0.text+0xf69): undefined reference to `pvPortMalloc'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libnet80211.a(ieee80211_sta.o): In function `ieee80211_parse_wmeparams':
+(.irom0.text+0xff4): undefined reference to `vTaskSuspendAll'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libnet80211.a(ieee80211_sta.o): In function `ieee80211_parse_wmeparams':
+(.irom0.text+0x1011): undefined reference to `xTaskResumeAll'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libnet80211.a(wl_chm.o): In function `chm_init':
+(.irom0.text+0x42): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libnet80211.a(wl_chm.o): In function `chm_init':
+(.irom0.text+0x82): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libnet80211.a(wl_chm.o): In function `chm_cancel_op':
+(.irom0.text+0x269): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libnet80211.a(wl_chm.o): In function `chm_return_home_channel':
+(.irom0.text+0x29b): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libnet80211.a(wl_cnx.o): In function `cnx_connect_timeout':
+(.irom0.text+0x52a): undefined reference to `xQueueGenericSend'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libnet80211.a(wl_cnx.o): In function `cnx_start_handoff_cb':
+(.irom0.text+0x648): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libnet80211.a(wl_cnx.o): In function `cnx_start_handoff_cb':
+(.irom0.text+0x683): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libnet80211.a(wl_cnx.o): In function `cnx_remove_rc':
+(.irom0.text+0xe37): undefined reference to `xQueueGenericSend'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libnet80211.a(wl_cnx.o): In function `cnx_rc_update_state_metric':
+(.irom0.text+0xf15): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libnet80211.a(wl_cnx.o): In function `cnx_rc_update_state_metric':
+(.irom0.text+0xf30): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libnet80211.a(wl_cnx.o): In function `cnx_rc_update_state_metric':
+(.irom0.text+0xf45): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libnet80211.a(wl_cnx.o): In function `cnx_update_bss_more':
+(.irom0.text+0x1217): undefined reference to `pvPortZalloc'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libnet80211.a(wl_cnx.o): In function `cnx_sta_leave':
+(.irom0.text+0x129a): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libnet80211.a(wl_cnx.o): In function `cnx_sta_leave':
+(.irom0.text+0x12bd): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libnet80211.a(wl_cnx.o): In function `cnx_sta_leave':
+(.irom0.text+0x13d5): undefined reference to `xQueueGenericSend'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libnet80211.a(wl_cnx.o): In function `cnx_sta_associated':
+(.irom0.text+0x15eb): undefined reference to `xQueueGenericSend'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/liblwip.a(dhcp.o): In function `dhcp_cleanup':
+(.text.dhcp_cleanup+0x1a): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/liblwip.a(dhcp.o): In function `dhcp_start':
+(.text.dhcp_start+0x43): undefined reference to `pvPortMalloc'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/liblwip.a(dhcpserver.o):(.text.handle_dhcp+0x5c): undefined reference to `pvPortZalloc'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/liblwip.a(dhcpserver.o):(.text.handle_dhcp+0x20b): undefined reference to `pvPortZalloc'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/liblwip.a(dhcpserver.o):(.text.handle_dhcp+0x233): undefined reference to `pvPortZalloc'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/liblwip.a(dhcpserver.o):(.text.handle_dhcp+0x2b8): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/liblwip.a(dhcpserver.o):(.text.handle_dhcp+0x2ca): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/liblwip.a(dhcpserver.o):(.text.handle_dhcp+0x393): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/liblwip.a(dhcpserver.o):(.text.handle_dhcp+0x3a7): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/liblwip.a(dhcpserver.o):(.text.handle_dhcp+0x51a): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/liblwip.a(dhcpserver.o):(.text.dhcps_stop+0x56): more undefined references to `vPortFree' follow
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/liblwip.a(dns.o):(.text.dns_recv+0x2e): undefined reference to `pvPortZalloc'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/liblwip.a(dns.o):(.text.dns_recv+0x1f5): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/liblwip.a(etharp.o):(.text.etharp_free_entry+0x38): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/liblwip.a(etharp.o): In function `etharp_query':
+(.text.etharp_query+0xf6): undefined reference to `pvPortMalloc'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/liblwip.a(etharp.o): In function `etharp_query':
+(.text.etharp_query+0x13b): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/liblwip.a(etharp.o): In function `ethernet_input':
+(.text.ethernet_input+0x1ee): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/liblwip.a(ip6_frag.o):(.text.ip6_reass_free_complete_datagram+0xd4): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/liblwip.a(ip6_frag.o): In function `ip6_reass':
+(.text.ip6_reass+0x1d2): undefined reference to `pvPortMalloc'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/liblwip.a(ip6_frag.o): In function `ip6_reass':
+(.text.ip6_reass+0x4c5): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/liblwip.a(ip6_frag.o): In function `ip6_reass':
+(.text.ip6_reass+0x504): undefined reference to `pvPortMalloc'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/liblwip.a(mld6.o): In function `mld6_stop':
+(.text.mld6_stop+0x52): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/liblwip.a(mld6.o): In function `mld6_joingroup':
+(.text.mld6_joingroup+0x6a): undefined reference to `pvPortMalloc'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/liblwip.a(mld6.o): In function `mld6_leavegroup':
+(.text.mld6_leavegroup+0xac): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/liblwip.a(nd6.o):(.text.nd6_free_q+0x24): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/liblwip.a(nd6.o):(.text.nd6_send_q$part$0+0xda): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/liblwip.a(nd6.o): In function `nd6_queue_packet':
+(.text.nd6_queue_packet+0x6e): undefined reference to `pvPortMalloc'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/liblwip.a(nd6.o): In function `nd6_queue_packet':
+(.text.nd6_queue_packet+0x9c): undefined reference to `pvPortMalloc'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/liblwip.a(pbuf.o): In function `pbuf_free':
+(.text.pbuf_free+0x7e): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/liblwip.a(pbuf.o): In function `pbuf_alloc':
+(.text.pbuf_alloc+0x5e): undefined reference to `pvPortMalloc'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/liblwip.a(pbuf.o): In function `pbuf_alloc':
+(.text.pbuf_alloc+0xb7): undefined reference to `pvPortMalloc'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/liblwip.a(pbuf.o): In function `pbuf_alloc':
+(.text.pbuf_alloc+0x11a): undefined reference to `pvPortMalloc'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/liblwip.a(pbuf.o): In function `pbuf_alloc':
+(.text.pbuf_alloc+0x14e): undefined reference to `pvPortMalloc'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/liblwip.a(raw.o): In function `raw_remove':
+(.text.raw_remove+0x31): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/liblwip.a(raw.o): In function `raw_new':
+(.text.raw_new+0x18): undefined reference to `pvPortMalloc'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/liblwip.a(sys_arch.o): In function `sys_sem_new':
+(.text.sys_sem_new+0x14): undefined reference to `xQueueGenericCreate'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/liblwip.a(sys_arch.o): In function `sys_sem_new':
+(.text.sys_sem_new+0x24): undefined reference to `xQueueGenericSend'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/liblwip.a(sys_arch.o): In function `sys_sem_new':
+(.text.sys_sem_new+0x3a): undefined reference to `xQueueGenericReceive'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/liblwip.a(sys_arch.o):(.text.sys_sem_free+0x0): undefined reference to `vQueueDelete'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/liblwip.a(sys_arch.o): In function `sys_sem_free':
+(.text.sys_sem_free+0xb): undefined reference to `vQueueDelete'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/liblwip.a(sys_arch.o): In function `sys_sem_signal':
+(.text.sys_sem_signal+0xe): undefined reference to `xQueueGenericSend'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/liblwip.a(sys_arch.o):(.text.sys_arch_sem_wait+0x10): undefined reference to `xTaskGetTickCount'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/liblwip.a(sys_arch.o): In function `sys_arch_sem_wait':
+(.text.sys_arch_sem_wait+0x2c): undefined reference to `xQueueGenericReceive'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/liblwip.a(sys_arch.o): In function `sys_arch_sem_wait':
+(.text.sys_arch_sem_wait+0x37): undefined reference to `xTaskGetTickCount'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/liblwip.a(sys_arch.o): In function `sys_arch_sem_wait':
+(.text.sys_arch_sem_wait+0x56): undefined reference to `xQueueGenericReceive'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/liblwip.a(sys_arch.o): In function `sys_mbox_new':
+(.text.sys_mbox_new+0xf): undefined reference to `xQueueGenericCreate'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/liblwip.a(sys_arch.o):(.text.sys_mbox_free+0x0): undefined reference to `uxQueueMessagesWaiting'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/liblwip.a(sys_arch.o): In function `sys_mbox_free':
+(.text.sys_mbox_free+0xf): undefined reference to `uxQueueMessagesWaiting'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/liblwip.a(sys_arch.o): In function `sys_mbox_free':
+(.text.sys_mbox_free+0x17): undefined reference to `vQueueDelete'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/liblwip.a(sys_arch.o): In function `sys_mbox_post':
+(.text.sys_mbox_post+0x16): undefined reference to `xQueueGenericSend'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/liblwip.a(sys_arch.o): In function `sys_mbox_trypost':
+(.text.sys_mbox_trypost+0xf): undefined reference to `xQueueGenericSend'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/liblwip.a(sys_arch.o):(.text.sys_arch_mbox_fetch+0x13): undefined reference to `xTaskGetTickCount'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/liblwip.a(sys_arch.o): In function `sys_arch_mbox_fetch':
+(.text.sys_arch_mbox_fetch+0x32): undefined reference to `xQueueGenericReceive'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/liblwip.a(sys_arch.o): In function `sys_arch_mbox_fetch':
+(.text.sys_arch_mbox_fetch+0x3b): undefined reference to `xTaskGetTickCount'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/liblwip.a(sys_arch.o): In function `sys_arch_mbox_fetch':
+(.text.sys_arch_mbox_fetch+0x62): undefined reference to `xQueueGenericReceive'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/liblwip.a(sys_arch.o): In function `sys_arch_mbox_tryfetch':
+(.text.sys_arch_mbox_tryfetch+0xe): undefined reference to `xQueueGenericReceive'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/liblwip.a(sys_arch.o):(.text.sys_mutex_new+0x0): undefined reference to `xQueueCreateMutex'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/liblwip.a(sys_arch.o): In function `sys_mutex_new':
+(.text.sys_mutex_new+0xf): undefined reference to `xQueueCreateMutex'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/liblwip.a(sys_arch.o): In function `sys_mutex_lock':
+(.text.sys_mutex_lock+0x12): undefined reference to `xQueueGenericReceive'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/liblwip.a(sys_arch.o): In function `sys_mutex_trylock':
+(.text.sys_mutex_trylock+0xe): undefined reference to `xQueueGenericReceive'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/liblwip.a(sys_arch.o): In function `sys_mutex_unlock':
+(.text.sys_mutex_unlock+0xe): undefined reference to `xQueueGenericSend'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/liblwip.a(sys_arch.o): In function `sys_mutex_free':
+(.text.sys_mutex_free+0x7): undefined reference to `vQueueDelete'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/liblwip.a(sys_arch.o): In function `sys_now':
+(.text.sys_now+0x6): undefined reference to `xTaskGetTickCount'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/liblwip.a(sys_arch.o): In function `sys_thread_new':
+(.text.sys_thread_new+0x1e): undefined reference to `xTaskGenericCreate'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/liblwip.a(sys_arch.o): In function `sys_arch_protect':
+(.text.sys_arch_protect+0x6): undefined reference to `vPortEnterCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/liblwip.a(sys_arch.o): In function `sys_arch_unprotect':
+(.text.sys_arch_unprotect+0x6): undefined reference to `vPortExitCritical'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/liblwip.a(sys_arch.o): In function `sys_arch_msleep':
+(.text.sys_arch_msleep+0xd): undefined reference to `vTaskDelay'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/liblwip.a(tcp.o): In function `tcp_listen_with_backlog':
+(.text.tcp_listen_with_backlog+0x33): undefined reference to `pvPortMalloc'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/liblwip.a(tcp.o): In function `tcp_listen_with_backlog':
+(.text.tcp_listen_with_backlog+0xcd): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/liblwip.a(tcp.o): In function `tcp_seg_free':
+(.text.tcp_seg_free+0x1a): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/liblwip.a(tcp.o): In function `tcp_slowtmr':
+(.text.tcp_slowtmr+0x223): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/liblwip.a(tcp.o): In function `tcp_slowtmr':
+(.text.tcp_slowtmr+0x2ba): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/liblwip.a(tcp.o):(.text.tcp_close_shutdown+0xb8): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/liblwip.a(tcp.o):(.text.tcp_close_shutdown+0x123): more undefined references to `vPortFree' follow
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/liblwip.a(tcp.o): In function `tcp_alloc':
+(.text.tcp_alloc+0xfe): undefined reference to `pvPortMalloc'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/liblwip.a(tcp.o): In function `tcp_alloc':
+(.text.tcp_alloc+0x113): undefined reference to `pvPortMalloc'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/liblwip.a(tcp.o): In function `tcp_alloc':
+(.text.tcp_alloc+0x15f): undefined reference to `pvPortMalloc'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/liblwip.a(tcp_in.o): In function `tcp_input':
+(.text.tcp_input+0xa64): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/liblwip.a(tcp_out.o):(.text.tcp_create_segment+0x3d): undefined reference to `pvPortMalloc'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/liblwip.a(tcpip.o):(.text.mem_free_local+0xf): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/liblwip.a(tcpip.o):(.text.tcpip_thread+0xce): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/liblwip.a(tcpip.o): In function `tcpip_input':
+(.text.tcpip_input+0x24): undefined reference to `pvPortMalloc'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/liblwip.a(tcpip.o): In function `tcpip_input':
+(.text.tcpip_input+0x4e): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/liblwip.a(tcpip.o): In function `tcpip_callback_with_block':
+(.text.tcpip_callback_with_block+0x2a): undefined reference to `pvPortMalloc'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/liblwip.a(tcpip.o): In function `tcpip_callback_with_block':
+(.text.tcpip_callback_with_block+0x62): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/liblwip.a(tcpip.o): In function `tcpip_timeout':
+(.text.tcpip_timeout+0x25): undefined reference to `pvPortMalloc'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/liblwip.a(tcpip.o): In function `tcpip_untimeout':
+(.text.tcpip_untimeout+0x21): undefined reference to `pvPortMalloc'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/liblwip.a(tcpip.o): In function `tcpip_callbackmsg_new':
+(.text.tcpip_callbackmsg_new+0x18): undefined reference to `pvPortMalloc'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/liblwip.a(tcpip.o): In function `tcpip_callbackmsg_delete':
+(.text.tcpip_callbackmsg_delete+0xb): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/liblwip.a(timers.o): In function `sys_timeout':
+(.text.sys_timeout+0x24): undefined reference to `pvPortMalloc'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/liblwip.a(timers.o): In function `sys_untimeout':
+(.text.sys_untimeout+0x3a): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/liblwip.a(timers.o): In function `sys_timeouts_mbox_fetch':
+(.text.sys_timeouts_mbox_fetch+0x3e): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/liblwip.a(udp.o): In function `udp_remove':
+(.text.udp_remove+0x31): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/liblwip.a(udp.o): In function `udp_new':
+(.text.udp_new+0x14): undefined reference to `pvPortMalloc'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/liblwip.a(api_msg.o):(.text.recv_udp+0x36): undefined reference to `pvPortMalloc'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/liblwip.a(api_msg.o):(.text.recv_raw+0x9f): undefined reference to `pvPortMalloc'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/liblwip.a(api_msg.o):(.text.netconn_alloc+0x20): undefined reference to `pvPortMalloc'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/liblwip.a(api_msg.o): In function `netconn_alloc':
+(.text.netconn_alloc+0xd0): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/liblwip.a(api_msg.o): In function `netconn_free':
+(.text.netconn_free+0x2e): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/liblwip.a(igmp.o):(.text.igmp_lookup_group$part$1+0x20): undefined reference to `pvPortMalloc'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/liblwip.a(igmp.o): In function `igmp_stop':
+(.text.igmp_stop+0x4a): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/liblwip.a(igmp.o): In function `igmp_leavegroup':
+(.text.igmp_leavegroup+0xa8): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/liblwip.a(netbuf.o): In function `netbuf_new':
+(.text.netbuf_new+0x13): undefined reference to `pvPortMalloc'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/liblwip.a(netbuf.o): In function `netbuf_delete':
+(.text.netbuf_delete+0x24): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/liblwip.a(netbuf.o): In function `netbuf_chain':
+(.text.netbuf_chain+0x24): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/liblwip.a(api_lib.o): In function `netconn_new_with_proto_and_callback':
+(.text.netconn_new_with_proto_and_callback+0x5a): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/liblwip.a(api_lib.o): In function `netconn_recv':
+(.text.netconn_recv+0x43): undefined reference to `pvPortMalloc'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/liblwip.a(api_lib.o): In function `netconn_recv':
+(.text.netconn_recv+0x82): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libwpa.a(ap_config.o):(.text.hostapd_config_defaults+0x1b): undefined reference to `pvPortZalloc'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libwpa.a(ap_config.o): In function `hostapd_config_defaults':
+(.text.hostapd_config_defaults+0x2b): undefined reference to `pvPortZalloc'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libwpa.a(ap_config.o): In function `hostapd_config_defaults':
+(.text.hostapd_config_defaults+0x72): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libwpa.a(ap_config.o): In function `hostapd_config_defaults':
+(.text.hostapd_config_defaults+0x80): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libwpa.a(ap_config.o):(.text.hostapd_derive_psk+0xf): undefined reference to `pvPortZalloc'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libwpa.a(common.o): In function `wpa_config_parse_string':
+(.text.wpa_config_parse_string+0x65): undefined reference to `pvPortMalloc'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libwpa.a(common.o): In function `wpa_config_parse_string':
+(.text.wpa_config_parse_string+0x82): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libwpa.a(common.o): In function `wpa_config_parse_string':
+(.text.wpa_config_parse_string+0xb0): undefined reference to `pvPortMalloc'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libwpa.a(common.o): In function `wpa_config_parse_string':
+(.text.wpa_config_parse_string+0xe9): undefined reference to `pvPortMalloc'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libwpa.a(wpa_auth.o):(.text.wpa_auth_set_key+0xd8): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libwpa.a(wpa_auth.o):(.text.wpa_auth_set_key+0xe6): undefined reference to `pvPortMalloc'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libwpa.a(wpa_auth.o):(.text.wpa_group_init_gmk_and_counter+0x4): undefined reference to `sha1_prf'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libwpa.a(wpa_auth.o):(.text.wpa_group_init_gmk_and_counter+0x74): undefined reference to `sha1_prf'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libwpa.a(wpa_auth.o):(.text.wpa_group_init+0x1a): undefined reference to `pvPortZalloc'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libwpa.a(wpa_auth.o):(.text.wpa_group_init+0x41): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libwpa.a(wpa_auth.o):(.text.wpa_init+0x1b): undefined reference to `pvPortZalloc'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libwpa.a(wpa_auth.o): In function `wpa_init':
+(.text.wpa_init+0x4e): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libwpa.a(wpa_auth.o): In function `wpa_init':
+(.text.wpa_init+0x70): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libwpa.a(wpa_auth.o): In function `wpa_init':
+(.text.wpa_init+0x7e): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libwpa.a(wpa_auth.o): In function `wpa_auth_sta_init':
+(.text.wpa_auth_sta_init+0x18): undefined reference to `pvPortZalloc'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libwpa.a(wpa_auth.o):(.text.wpa_free_sta_sm+0x24): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libwpa.a(wpa_auth.o):(.text.wpa_free_sta_sm+0x33): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libwpa.a(wpa_auth.o):(.text.wpa_free_sta_sm+0x43): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libwpa.a(wpa_auth.o): In function `wpa_receive':
+(.text.wpa_receive+0x289): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libwpa.a(wpa_auth.o): In function `wpa_receive':
+(.text.wpa_receive+0x296): undefined reference to `pvPortMalloc'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libwpa.a(wpa_auth.o):(.text.wpa_gmk_to_gtk+0x58): undefined reference to `sha1_prf'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libwpa.a(wpa_auth.o):(.text.__wpa_send_eapol+0x8): undefined reference to `rc4_skip'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libwpa.a(wpa_auth.o):(.text.__wpa_send_eapol+0xc): undefined reference to `aes_wrap'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libwpa.a(wpa_auth.o):(.text.__wpa_send_eapol+0x67): undefined reference to `pvPortZalloc'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libwpa.a(wpa_auth.o): In function `__wpa_send_eapol':
+(.text.__wpa_send_eapol+0x212): undefined reference to `pvPortZalloc'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libwpa.a(wpa_auth.o): In function `__wpa_send_eapol':
+(.text.__wpa_send_eapol+0x224): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libwpa.a(wpa_auth.o): In function `__wpa_send_eapol':
+(.text.__wpa_send_eapol+0x2b2): undefined reference to `rc4_skip'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libwpa.a(wpa_auth.o): In function `__wpa_send_eapol':
+(.text.__wpa_send_eapol+0x2cc): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libwpa.a(wpa_auth.o): In function `__wpa_send_eapol':
+(.text.__wpa_send_eapol+0x2e4): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libwpa.a(wpa_auth.o): In function `__wpa_send_eapol':
+(.text.__wpa_send_eapol+0x374): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libwpa.a(wpa_auth.o): In function `__wpa_send_eapol':
+(.text.__wpa_send_eapol+0x3e5): undefined reference to `aes_wrap'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libwpa.a(wpa_auth.o): In function `__wpa_send_eapol':
+(.text.__wpa_send_eapol+0x3f6): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libwpa.a(wpa_auth.o): In function `__wpa_send_eapol':
+(.text.__wpa_send_eapol+0x404): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libwpa.a(wpa_auth.o):(.text.sm_WPA_PTK_PTKINITNEGOTIATING_Enter+0x100): undefined reference to `pvPortMalloc'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libwpa.a(wpa_auth.o):(.text.sm_WPA_PTK_PTKINITNEGOTIATING_Enter+0x179): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libwpa.a(wpa_auth.o):(.text.sm_WPA_PTK_GROUP_REKEYNEGOTIATING_Enter+0x8e): undefined reference to `pvPortMalloc'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libwpa.a(wpa_auth.o):(.text.sm_WPA_PTK_GROUP_REKEYNEGOTIATING_Enter+0x102): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libwpa.a(wpa_auth_ie.o): In function `wpa_auth_gen_wpa_ie':
+(.text.wpa_auth_gen_wpa_ie+0x59): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libwpa.a(wpa_auth_ie.o): In function `wpa_auth_gen_wpa_ie':
+(.text.wpa_auth_gen_wpa_ie+0x6a): undefined reference to `pvPortMalloc'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libwpa.a(wpa_auth_ie.o): In function `wpa_validate_wpa_ie':
+(.text.wpa_validate_wpa_ie+0xf8): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libwpa.a(wpa_auth_ie.o): In function `wpa_validate_wpa_ie':
+(.text.wpa_validate_wpa_ie+0x105): undefined reference to `pvPortMalloc'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libwpa.a(wpa.o):(.text.wpa_supplicant_process_1_of_2_wpa+0x0): undefined reference to `aes_unwrap'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libwpa.a(wpa.o):(.text.wpa_supplicant_process_1_of_2_wpa+0x55): undefined reference to `aes_unwrap'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libwpa.a(wpa.o):(.text.wpa_supplicant_process_1_of_2_wpa+0xec): undefined reference to `rc4_skip'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libwpa.a(wpa.o):(.text.wpa_supplicant_decrypt_key_data+0x4a): undefined reference to `aes_unwrap'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libwpa.a(wpa.o):(.text.wpa_supplicant_decrypt_key_data+0xa3): undefined reference to `rc4_skip'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libwpa.a(wpa.o):(.text.wpa_set_passphrase+0x4e): undefined reference to `pbkdf2_sha1'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libwpa.a(wpa_common.o):(.text.wpa_eapol_key_mic+0x0): undefined reference to `hmac_md5'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libwpa.a(wpa_common.o):(.text.wpa_eapol_key_mic+0x4): undefined reference to `hmac_sha1'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libwpa.a(wpa_common.o): In function `wpa_eapol_key_mic':
+(.text.wpa_eapol_key_mic+0x1c): undefined reference to `hmac_md5'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libwpa.a(wpa_common.o): In function `wpa_eapol_key_mic':
+(.text.wpa_eapol_key_mic+0x2d): undefined reference to `hmac_sha1'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libwpa.a(wpa_common.o): In function `wpa_pmk_to_ptk':
+(.text.wpa_pmk_to_ptk+0xd7): undefined reference to `sha1_prf'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libwpa.a(wpa_common.o):(.text.rsn_pmkid+0x8): undefined reference to `hmac_sha1_vector'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libwpa.a(wpa_common.o): In function `rsn_pmkid':
+(.text.rsn_pmkid+0x4b): undefined reference to `hmac_sha1_vector'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libwpa.a(wpa_main.o):(.text.ppInstallKey+0x4): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libwpa.a(wpa_main.o): In function `ppInstallKey':
+(.text.ppInstallKey+0x98): undefined reference to `pvPortMalloc'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libwpa.a(wpa_main.o): In function `ppInstallKey':
+(.text.ppInstallKey+0xe4): undefined reference to `vPortFree'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libwpa.a(wpa_main.o): In function `ppInstallKey':
+(.text.ppInstallKey+0xf3): undefined reference to `pvPortMalloc'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libwpa.a(wpa_main.o): In function `eagle_auth_done':
+(.text.eagle_auth_done+0xe3): undefined reference to `xQueueGenericSend'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(libc.o):(.text+0x0): undefined reference to `malloc'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(libc.o): In function `_malloc_r':
+(.text+0xb): undefined reference to `malloc'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(libc.o): In function `_malloc_r':
+(.text+0x18): undefined reference to `realloc'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(libc.o): In function `_realloc_r':
+(.text+0x25): undefined reference to `realloc'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(libc.o): In function `_realloc_r':
+(.text+0x34): undefined reference to `calloc'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(libc.o): In function `_calloc_r':
+(.text+0x41): undefined reference to `calloc'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(libc.o): In function `_calloc_r':
+(.text+0x50): undefined reference to `free'
+/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib/libmain.a(libc.o): In function `_free_r':
+(.text+0x5b): undefined reference to `free'
+collect2: error: ld returned 1 exit status
+make: *** [a.out] Error 1
+
+11:15:49 Build Finished (took 1s.217ms)
+

@@ -1,0 +1,38 @@
+#include <stdio.h>
+#include <stdbool.h>
+
+#define MAXSIZE 8
+
+int array[MAXSIZE];
+int *array_ptr = &array[0];
+int pointer_counter = 8;
+
+void push(int data);
+
+int main()
+{
+
+	int i = 0;
+	push(3);
+	push(4);
+	push(9585);
+	push(200);
+	push(45);
+	push(34);
+	for(i = 0; i < MAXSIZE; i++)
+	{
+		printf("%d\n", array[i]);
+	}
+	return 0;
+	}
+
+void push(int data)
+{
+	*array_ptr = data;
+	if(pointer_counter != 0)
+	{
+		*array_ptr = data;
+		array_ptr--;
+		pointer_counter--;
+	}
+	}

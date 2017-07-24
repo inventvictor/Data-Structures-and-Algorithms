@@ -1,0 +1,15 @@
+14:05:06 **** Incremental Build of configuration Debug for project Binary_Search ****
+make all 
+Building file: ../binary_search.c
+Invoking: Cross GCC Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"binary_search.d" -MT"binary_search.d" -o "binary_search.o" "../binary_search.c"
+Finished building: ../binary_search.c
+ 
+Building target: Binary_Search
+Invoking: Cross GCC Linker
+gcc  -o "Binary_Search"  ./binary_search.o   
+Finished building target: Binary_Search
+ 
+
+14:05:06 Build Finished (took 174ms)
+

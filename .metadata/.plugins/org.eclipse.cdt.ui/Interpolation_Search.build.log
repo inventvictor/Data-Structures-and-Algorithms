@@ -1,0 +1,7 @@
+09:39:37 **** Clean-only build of configuration Debug for project Interpolation_Search ****
+make clean 
+rm -rf  ./interpolation_search.o  ./interpolation_search.d  Interpolation_Search
+ 
+
+09:39:37 Build Finished (took 67ms)
+

@@ -1,0 +1,16 @@
+/*
+ * jsondec.c
+ *
+ *  Created on: May 19, 2017
+ *      Author: inventor
+ */
+
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+	char *str = "{\r\n  \"pins\": [\"1\",\"2\"],\r\n  \"unit\": [\"%\", \"degC\"],\r\n  \"type\": \"LM35\",\r\n  \"id\": \"1\",\r\n  \"api_key\": \"msdnkjngrgiu1234\",\r\n  \"isEnabled\": \"1\"\r\n}";
+	printf("%c\n", str[6]);
+}
+

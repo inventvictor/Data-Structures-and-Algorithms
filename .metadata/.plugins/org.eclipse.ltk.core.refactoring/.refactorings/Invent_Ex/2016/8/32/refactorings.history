@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Invent_Ex/selective_sort&apos; to &apos;selective_sort.c&apos;" description="Rename resource &apos;selective_sort&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="selective_sort" name="selective_sort.c" stamp="1470524358346" updateReferences="true"/>
+</session>

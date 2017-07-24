@@ -1,0 +1,22 @@
+08:17:36 **** Incremental Build of configuration Debug for project Circular_Linked_List_Algos ****
+make all 
+Building file: ../circular_linked_list_algos.c
+Invoking: Cross GCC Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"circular_linked_list_algos.d" -MT"circular_linked_list_algos.d" -o "circular_linked_list_algos.o" "../circular_linked_list_algos.c"
+../circular_linked_list_algos.c: In function ‘circularLinkedList_insertFirst’:
+../circular_linked_list_algos.c:70:34: warning: implicit declaration of function ‘malloc’ [-Wimplicit-function-declaration]
+  struct node* node_ptr = (struct node*)malloc(sizeof(struct node));
+                                  ^
+../circular_linked_list_algos.c:70:40: warning: incompatible implicit declaration of built-in function ‘malloc’ [enabled by default]
+  struct node* node_ptr = (struct node*)malloc(sizeof(struct node));
+                                        ^
+Finished building: ../circular_linked_list_algos.c
+ 
+Building target: Circular_Linked_List_Algos
+Invoking: Cross GCC Linker
+gcc  -o "Circular_Linked_List_Algos"  ./circular_linked_list_algos.o   
+Finished building target: Circular_Linked_List_Algos
+ 
+
+08:17:36 Build Finished (took 169ms)
+

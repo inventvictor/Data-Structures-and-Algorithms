@@ -1,0 +1,148 @@
+#include <espressif/esp_common.h>
+#include <lwip/posix/sys/socket.h>
+#include <lwip/ipv4/lwip/inet.h>
+#include <uart.h>
+
+void setupListener();
+uint32 ICACHE_FLASH_ATTR;
+user_rf_cal_sector_set(void)
+{
+    flash_size_map size_map = system_get_flash_size_map();
+    uint32 rf_cal_sec = 0;
+
+    switch (size_map) {
+        case FLASH_SIZE_4M_MAP_256_256:
+            rf_cal_sec = 128 - 8;
+            break;
+
+        case FLASH_SIZE_8M_MAP_512_512:
+            rf_cal_sec = 256 - 5;
+            break;
+
+        case FLASH_SIZE_16M_MAP_512_512:
+        case FLASH_SIZE_16M_MAP_1024_1024:
+            rf_cal_sec = 512 - 5;
+            break;
+
+        case FLASH_SIZE_32M_MAP_512_512:
+        case FLASH_SIZE_32M_MAP_1024_1024:
+            rf_cal_sec = 1024 - 5;
+            break;
+
+        default:
+            rf_cal_sec = 0;
+            break;
+    }
+
+    return rf_cal_sec;
+}
+
+static void wifiEventCallback(System_Event_t *pEvent) {
+  printf("Caught an event!\n");
+  printf("Free heap size: %d\n", system_get_free_heap_size());
+  switch(pEvent->event_id) {
+      case EVENT_STAMODE_CONNECTED:
+        os_printf("Event: EVENT_STAMODE_CONNECTED\n");
+        break;
+      case EVENT_STAMODE_DISCONNECTED:
+        os_printf("Event: EVENT_STAMODE_DISCONNECTED\n");
+        break;
+      case EVENT_STAMODE_AUTHMODE_CHANGE:
+        os_printf("Event: EVENT_STAMODE_AUTHMODE_CHANGE\n");
+        break;
+      case EVENT_STAMODE_GOT_IP:
+        os_printf("Event: EVENT_STAMODE_GOT_IP\n");
+        xTaskCreate(setupListener, "setupListener", 200, NULL, 3, NULL);
+        break;
+      case EVENT_SOFTAPMODE_STACONNECTED:
+        os_printf("Event: EVENT_SOFTAPMODE_STACONNECTED\n");
+        break;
+      case EVENT_SOFTAPMODE_STADISCONNECTED:
+        os_printf("Event: EVENT_SOFTAPMODE_STADISCONNECTED\n");
+        break;
+      default:
+        os_printf("Unexpected event: %d\n", pEvent->event_id);
+      break;
+    }
+}
+
+void setupListener() {
+  printf("setupListener started\n");
+  int serverSocket;
+  serverSocket = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
+  if (serverSocket < 0) {
+    printf("Error from socket!\n");
+    return;
+  }
+  struct sockaddr_in serverAddr;
+  serverAddr.sin_family = AF_INET;
+  serverAddr.sin_addr.s_addr = htonl(INADDR_ANY);
+  serverAddr.sin_port = htons(80);
+
+  int rc = bind(serverSocket, (struct sockaddr *)&serverAddr, sizeof(serverAddr));
+  if (rc < 0) {
+    printf("Error from bind\n");
+    return;
+  }
+  printf("All ok\n");
+  rc = listen(serverSocket, 5);
+  if (rc < 0) {
+    printf("Error from listen\n");
+    return;
+  }
+  while(1) {
+    struct sockaddr_in addr;
+    socklen_t length = sizeof(addr);
+    int newSocket = accept(serverSocket, (struct sockaddr *)&addr, &length);
+    if (newSocket < 0) {
+      printf("Error with accept: %d, errn0=%d\n", newSocket, errno);
+      return;
+    }
+    printf("We have received a new client connection!");
+    close(newSocket);
+  }
+  // Let us now watch for new connections
+  vTaskDelete(NULL);
+}
+
+void taskConnect(void *pData) {
+  wifi_set_event_handler_cb(wifiEventCallback);
+  wifi_set_opmode_current(STATION_MODE);
+  struct station_config stationConfig;
+  strncpy(stationConfig.ssid, "sweetie", 32);
+  strncpy(stationConfig.password, "kolbanpassword", 64);
+  wifi_station_set_config(&stationConfig);
+  wifi_station_connect();
+  printf("Hello from taskConnect!\n");
+  int count = 0;
+  while(1) {
+    count++;
+    printf("count - %d\n", count);
+    vTaskDelay(100);
+  }
+}
+
+void setupUART1() {
+  UART_ConfigTypeDef uart_config;
+  uart_config.baud_rate = BIT_RATE_115200;
+  uart_config.data_bits = UART_WordLength_8b;
+  uart_config.parity = USART_Parity_None;
+  uart_config.stop_bits = USART_StopBits_1;
+  uart_config.flow_ctrl = USART_HardwareFlowControl_None;
+  uart_config.UART_RxFlowThresh = 120;
+  uart_config.UART_InverseMask = UART_None_Inverse;
+  UART_ParamConfig(UART1, &uart_config);
+
+  UART_SetPrintPort(UART1);
+}
+
+void user_init(void) {
+  uart_init_new();
+  setupUART1();
+  UART_SetBaudrate(UART0, 115200);
+  printf("SDK version:%s\n", system_get_sdk_version());
+  printf("Free heap size: %d\n", system_get_free_heap_size());
+  printf("user_init running ...\n");
+  wifi_set_opmode(NULL_MODE);
+  xTaskCreate(taskConnect, "taskConnect", 200, NULL, 3, NULL);
+}

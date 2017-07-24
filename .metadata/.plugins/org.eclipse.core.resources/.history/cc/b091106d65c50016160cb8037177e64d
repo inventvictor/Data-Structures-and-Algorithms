@@ -1,0 +1,77 @@
+/*
+ * interpolation_search.c
+ *
+ *  Created on: Dec 18, 2016
+ *      Author: inventor
+ */
+/*
+ * Set Mid = Lo + ((Hi - Lo) / (A[Hi] - A[Lo])) * (X - A[Lo])
+ * Run-time complexity = O(log(log n))
+ * */
+#include <stdio.h>
+#include <stdbool.h>
+
+#define ARRAY_SIZE 10
+
+int array[ARRAY_SIZE] = { 10, 14, 19, 26, 27, 31, 33, 35, 42, 44 };
+int *array_ptr = array;
+
+int midPoint = 0;
+int highPoint = ARRAY_SIZE - 1;
+int lowPoint = 0;
+int comp_no = 0;
+
+int *top_ptr = array;
+int *bottom_ptr = array;
+int size = ARRAY_SIZE;
+
+int interpolation_search(int *a_ptr, int data);
+void display_array(int *a_ptr, int size);
+
+int main()
+{
+	if (interpolation_search(array_ptr, 43) == -1)
+	{
+		printf("Not Found");
+	}
+	return 0;
+	}
+
+void display_array(int *a_ptr, int size)
+{
+	int i = 0;
+	printf("[");
+	for(i = 0; i < size; i++)
+	{
+		printf("%d ", *a_ptr);
+		a_ptr++;
+	}
+	printf("]\n");
+	}
+
+int interpolation_search(int *a_ptr, int data)
+{
+	int b = -1;
+	while(lowPoint<=highPoint || array[lowPoint] == array[highPoint])
+	{
+		midPoint = lowPoint + ((double)(highPoint-lowPoint)/(array[highPoint]-array[lowPoint])) *(data - array[lowPoint]);
+		a_ptr = &array[midPoint];
+		if(*a_ptr < data)
+		{
+			lowPoint = midPoint + 1;
+			b = -1;
+		}
+		else if(*a_ptr > data)
+		{
+			highPoint = midPoint - 1;
+			b = -1;
+		}
+		else
+		{
+			b = *a_ptr;
+			printf("Found %d at index %ld\n", b, a_ptr-array);
+			break;
+		}
+	}
+	return b;
+	}

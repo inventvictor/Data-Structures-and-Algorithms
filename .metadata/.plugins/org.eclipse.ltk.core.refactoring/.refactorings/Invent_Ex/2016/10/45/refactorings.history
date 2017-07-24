@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Invent_Ex/algos&apos; to &apos;algos.c&apos;" description="Rename resource &apos;algos&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="algos" name="algos.c" stamp="1477880561706" updateReferences="true"/>
+</session>

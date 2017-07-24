@@ -1,0 +1,70 @@
+/*
+ * arrayStack.c
+ *
+ *  Created on: Nov 18, 2016
+ *      Author: inventor
+ */
+
+#include <stdio.h>
+#include <stdbool.h>
+#include "arrayStack.h"
+
+bool stack_isEmpty(int ptr_counter)
+{
+	bool b = false;
+	if(ptr_counter == MAXSIZE)
+	{
+		b = true;
+	}
+	return b;
+	}
+
+bool stack_isFull(int ptr_counter)
+{
+	bool b = false;
+	if(ptr_counter == 0)
+	{
+		b = true;
+	}
+	return b;
+	}
+
+char stack_peek(int ptr_counter, int *arr_ptr)
+{
+	int data = 0;
+	if(!stack_isEmpty(ptr_counter))
+	{
+		arr_ptr++;
+		data = *arr_ptr;
+		arr_ptr--;
+	}
+	return data;
+	}
+
+bool stack_push(int data, int *arr_ptr, int ptr_counter)
+{
+	bool b = false;
+	if(!stack_isFull(ptr_counter))
+	{
+		*arr_ptr = data;
+		arr_ptr--;
+		ptr_counter--;
+		b = true;
+	}
+	return b;
+	}
+
+char stack_pop(int *arr_ptr, int ptr_counter)
+{
+	int data = 0;
+	arr_ptr++;
+	ptr_counter++;
+	data = *arr_ptr;
+	*arr_ptr = 0;
+	return data;
+	}
+
+int stack_size(int ptr_counter)
+{
+	return MAXSIZE - ptr_counter;
+	}

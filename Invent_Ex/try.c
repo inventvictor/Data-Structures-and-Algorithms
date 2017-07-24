@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+int array[5] = {16,12,4,5,6};
+
+int main()
+{
+	for(int i =0; i<= 5; i++)
+	{
+		printf("%d\n", array[i]);
+		}
+	}
+
+int length(int *array)
+{
+	return 0;
+	}
+
+void insertAtBeginning(int val, int *array, int length)
+{
+	int j = length;
+
+	}

@@ -1,0 +1,29 @@
+03:37:06 **** Incremental Build of configuration Debug for project test ****
+make all 
+Building file: ../src/Testclass.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Testclass.d" -MT"src/Testclass.d" -o "src/Testclass.o" "../src/Testclass.cpp"
+Finished building: ../src/Testclass.cpp
+ 
+Building file: ../src/test.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/test.d" -MT"src/test.d" -o "src/test.o" "../src/test.cpp"
+../src/test.cpp: In function ‘int main()’:
+../src/test.cpp:78:27: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+  int val = length("victor");
+                           ^
+Finished building: ../src/test.cpp
+ 
+Building file: ../src/test2.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/test2.d" -MT"src/test2.d" -o "src/test2.o" "../src/test2.cpp"
+Finished building: ../src/test2.cpp
+ 
+Building target: test
+Invoking: Cross G++ Linker
+g++  -o "test"  ./src/Testclass.o ./src/test.o ./src/test2.o   
+Finished building target: test
+ 
+
+03:37:08 Build Finished (took 2s.193ms)
+

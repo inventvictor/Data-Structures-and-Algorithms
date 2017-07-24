@@ -1,0 +1,1 @@
+jsondec.d: ../jsondec.c

@@ -1,0 +1,62 @@
+#include <stdio.h>
+#include <stdbool.h>
+
+#define MAXSIZE 8
+
+int array[MAXSIZE];
+int *array_ptr = &array[MAXSIZE-1];
+int pointer_counter = MAXSIZE;
+
+bool stack_isFull();
+int stack_peek();
+bool stack_push(int data);
+
+int main()
+{
+
+	int i = 0;
+	stack_push(3);
+	stack_push(4);
+	stack_push(9585);
+	stack_push(200);
+	stack_push(45);
+	stack_push(34);
+	stack_push(384);
+	//stack_push(3435);
+	for(i = 0; i < MAXSIZE; i++)
+	{
+		printf("%d\n", array[i]);
+	}
+	printf("isFull-");
+	printf("%d\n", stack_isFull());
+	printf("%d\n", stack_peek());
+	return 0;
+	}
+
+bool stack_isFull()
+{
+	bool b = false;
+	if(pointer_counter == 0)
+	{
+		b = true;
+	}
+	return b;
+	}
+
+int stack_peek()
+{
+	return *array_ptr;
+	}
+
+bool stack_push(int data)
+{
+	bool b = false;
+	if(pointer_counter != 0)
+	{
+		*array_ptr = data;
+		array_ptr--;
+		pointer_counter--;
+		b = true;
+	}
+	return b;
+	}

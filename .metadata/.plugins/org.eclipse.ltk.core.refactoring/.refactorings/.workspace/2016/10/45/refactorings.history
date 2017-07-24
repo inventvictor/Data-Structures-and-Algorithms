@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Delete resource &apos;Invent_Ex/algos.c&apos;" deleteContents="false" description="Delete resource &apos;Invent_Ex/algos.c&apos;" element1="/Invent_Ex/algos.c" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1477880600771"/>&#x0A;<refactoring comment="Delete resource &apos;Algos/doubly_linked_list_algos&apos;" deleteContents="false" description="Delete resource &apos;Algos/doubly_linked_list_algos&apos;" element1="/Algos/doubly_linked_list_algos" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1477938099355"/>
+</session>

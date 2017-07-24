@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Circular_Singly_Linked_List_Algos/circular_linked_list_algos.c&apos; to &apos;circular_singly_linked_list_algos.c&apos;" description="Rename resource &apos;circular_linked_list_algos.c&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="circular_linked_list_algos.c" name="circular_singly_linked_list_algos.c" stamp="1478331938016" updateReferences="true"/>
+</session>

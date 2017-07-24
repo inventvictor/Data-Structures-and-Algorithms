@@ -1,0 +1,7 @@
+09:39:37 **** Clean-only build of configuration Debug for project Circular_Singly_Linked_List_Algos ****
+make clean 
+rm -rf  ./circular_singly_linked_list_algos.o  ./circular_singly_linked_list_algos.d  Circular_Singly_Linked_List_Algos
+ 
+
+09:39:37 Build Finished (took 126ms)
+

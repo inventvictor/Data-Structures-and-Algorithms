@@ -1,0 +1,15 @@
+18:21:43 **** Incremental Build of configuration Debug for project Search_Techniques ****
+make all 
+Building file: ../linear_search.c
+Invoking: Cross GCC Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"linear_search.d" -MT"linear_search.d" -o "linear_search.o" "../linear_search.c"
+Finished building: ../linear_search.c
+ 
+Building target: Search_Techniques
+Invoking: Cross GCC Linker
+gcc  -o "Search_Techniques"  ./linear_search.o   
+Finished building target: Search_Techniques
+ 
+
+18:21:43 Build Finished (took 186ms)
+

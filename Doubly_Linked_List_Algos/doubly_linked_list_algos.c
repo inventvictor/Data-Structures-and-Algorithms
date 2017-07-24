@@ -1,0 +1,220 @@
+#include <stdio.h>
+#include <stdbool.h>
+#include <stdlib.h>
+
+void doublyLinkedList_printForward();
+void doublyLinkedList_printBackward();
+void doublyLinkedList_insertFirst(int key, int data);
+bool doublyLinkedList_isEmpty();
+struct node* doublyLinkedList_deleteFirst();
+void doublyLinkedList_insertLast(int key, int data);
+struct node* doublyLinkedList_deleteFirst();
+struct node* doublyLinkedList_deleteLast();
+int doublyLinkedList_length();
+struct node* doublyLinkedList_delete(int key);
+bool doublyLinkedList_insertAfter(int key, int newKey, int data);
+
+struct node
+{
+	int key;
+	int data;
+	struct node* next;
+	struct node* prev;
+	};
+
+struct node* head = NULL;
+struct node* last = NULL;
+
+int main()
+{
+	doublyLinkedList_insertLast(0,7);
+	printf("%d\n", doublyLinkedList_length());
+	doublyLinkedList_printForward();
+	doublyLinkedList_insertFirst(1,9);
+	doublyLinkedList_insertLast(2,5);
+	printf("%d\n", doublyLinkedList_length());
+	doublyLinkedList_printForward();
+	doublyLinkedList_printBackward();
+	doublyLinkedList_deleteFirst();
+	doublyLinkedList_printForward();
+	doublyLinkedList_printBackward();
+	doublyLinkedList_deleteLast();
+	doublyLinkedList_printForward();
+	doublyLinkedList_printBackward();
+	doublyLinkedList_insertLast(2,5);
+	doublyLinkedList_insertFirst(7,6);
+	printf("%d\n", doublyLinkedList_length());
+	doublyLinkedList_printForward();
+//	printf("%d\n", doublyLinkedList_length());
+//	doublyLinkedList_printForward();
+//	printf("%d\n", doublyLinkedList_length());
+//	doublyLinkedList_printForward();
+	doublyLinkedList_insertAfter(7,4,98);
+//	printf("%d\n", doublyLinkedList_length());
+	doublyLinkedList_printForward();
+//	doublyLinkedList_insertAfter(2,67,698);
+//	printf("%d\n", doublyLinkedList_length());
+//	doublyLinkedList_printForward();
+	doublyLinkedList_delete(4);
+//	printf("%d\n", doublyLinkedList_length());
+	doublyLinkedList_printForward();
+	return 0;
+	}
+
+void doublyLinkedList_printForward()
+{
+	struct node* link_ptr = head;
+	printf("[");
+	while(link_ptr != NULL)
+	{
+		printf("(%d, %d)", link_ptr->key, link_ptr->data);
+		link_ptr = link_ptr->next;
+	}
+	printf("]\n");
+	}
+
+void doublyLinkedList_printBackward()
+{
+	struct node* link_ptr = last;
+	printf("[");
+	while(link_ptr != NULL)
+	{
+		printf("(%d, %d)", link_ptr->key, link_ptr->data);
+		link_ptr = link_ptr->prev;
+	}
+	printf("]\n");
+	}
+void doublyLinkedList_insertFirst(int key, int data)
+{
+	struct node* link = (struct node*) malloc(sizeof(struct node));
+	link->key = key;
+	link->data = data;
+	if(doublyLinkedList_isEmpty())
+	{
+		last = link;
+		link->next = head;
+		link->prev = NULL;
+		head = link;
+	}
+	else
+	{
+		link->next = head;
+		link->prev = NULL;
+		head->prev = link;
+		head = link;
+	}
+	}
+
+void doublyLinkedList_insertLast(int key, int data)
+{
+	struct node* link = (struct node*)malloc(sizeof(struct node));
+	link->key = key;
+	link->data = data;
+	if(doublyLinkedList_isEmpty())
+	{
+		head = link;
+		link->next = last;
+		link->prev = NULL;
+		last = link;
+	}
+	else
+	{
+		link->next = NULL;
+		link->prev = last;
+		last->next = link;
+		last = link;
+	}
+	}
+
+bool doublyLinkedList_isEmpty()
+{
+	struct node* link_ptr = head;
+	bool b = false;
+	if(link_ptr == NULL)
+	{
+		b = true;
+	}
+	return b;
+	}
+
+struct node* doublyLinkedList_deleteFirst()
+{
+	struct node* link_ptr = head;
+	head = link_ptr->next;
+	head->prev = NULL;
+	return link_ptr;
+	}
+
+struct node* doublyLinkedList_deleteLast()
+{
+	struct node* link_ptr = last;
+	last = link_ptr->prev;
+	last->next = NULL;
+	return link_ptr;
+	}
+
+int doublyLinkedList_length()
+{
+	int length = 0;
+	struct node* link_ptr = head;
+	while(link_ptr != NULL)
+	{
+		length++;
+		link_ptr = link_ptr->next;
+	}
+	return length;
+	}
+
+struct node* doublyLinkedList_delete(int key)
+{
+	struct node* link_ptr = head;
+	while(link_ptr->key != key)
+	{
+		link_ptr = link_ptr->next;
+	}
+	if(link_ptr == head)
+	{
+		link_ptr->next->prev = NULL;
+		head = link_ptr->next;
+	}
+	else if(link_ptr == last)
+	{
+		link_ptr->prev->next = NULL;
+		last = link_ptr->prev;
+	}
+	else
+	{
+		link_ptr->prev->next = link_ptr->next;
+		link_ptr->next->prev = link_ptr->prev;
+	}
+	return link_ptr;
+	}
+
+bool doublyLinkedList_insertAfter(int key, int newKey, int newData)
+{
+	struct node *newLink = (struct node*) malloc(sizeof(struct node));
+	struct node* link_ptr = head;
+	while(link_ptr->key != key)
+	{
+		link_ptr = link_ptr->next;
+	}
+	if(link_ptr->next == NULL)
+	{
+		newLink->key = newKey;
+		newLink->data = newData;
+		newLink->next = NULL;
+		link_ptr->next = newLink;
+		newLink->prev = link_ptr;
+		last = newLink;
+	}
+	else
+	{
+		newLink->key = newKey;
+		newLink->data = newData;
+		newLink->next = link_ptr->next;
+		link_ptr->next->prev = newLink;
+		link_ptr->next = newLink;
+		newLink->prev = link_ptr;
+	}
+	return true;
+	}

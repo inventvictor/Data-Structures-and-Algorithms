@@ -1,0 +1,69 @@
+/*
+ * selection_sort.c
+ *
+ *  Created on: Dec 22, 2016
+ *      Author: inventor
+ */
+
+#include <stdio.h>
+#include <stdbool.h>
+
+#define ARRAYSIZE 4
+
+int array[ARRAYSIZE] = {4,2,3,0};
+
+void printSortedArray(int arr[]);
+void swap(int *a_ptr, int *b_ptr);
+int getMin(int *arr_ptr, int size);
+
+int main()
+{
+	printf("%d\n", getMin(array, ARRAYSIZE));
+	return 0;
+	}
+
+void printSortedArray(int arr[])
+{
+	int i = 0;
+	printf("[");
+	for(i = 0; i < ARRAYSIZE; i++)
+	{
+		printf(" %d ", arr[i]);
+	}
+	printf("]\n");
+	}
+
+void swap(int *a_ptr, int *b_ptr)
+{
+	int c = *a_ptr;
+	*a_ptr = *b_ptr;
+	*b_ptr = c;
+	}
+
+void selection_sort(int a[])
+{
+	int i = 0;
+	for(i = 0; i < ARRAYSIZE; i++)
+	{
+
+	}
+	}
+
+int getMin(int *arr_ptr, int size)
+{
+	int i = 0;
+	int val = arr_ptr[i];
+	for(i = 0; i < size; i++)
+	{
+		int n = i+1;
+		if(val <= arr_ptr[n] && n < ARRAYSIZE)
+		{
+			val = arr_ptr[i];
+		}
+		else if(val > arr_ptr[n] && n < ARRAYSIZE)
+		{
+			val = arr_ptr[n];
+		}
+	}
+	return val;
+	}

@@ -1,0 +1,183 @@
+#include <stdio.h>
+#include <stdbool.h>
+#include <stdlib.h>
+#include <string.h>
+#include "arrayStack.h"
+#include "intArrayStack.h"
+
+bool isOperator(char op);
+int precedenceLevel(char op);
+
+char *infix = "3+6/4*2+7-9";
+char postfix[MAXSIZE] = {};
+char cc[8];
+char ncc[8];
+
+int main()
+{
+	int i = 0, k = 0, y=0;
+	int g = strlen(infix);
+	for(i=0; i<g; i++)
+	{
+		if(!isOperator(*infix))
+		{
+			postfix[k] = *infix;
+			k++;
+		}
+		else
+		{
+			if(stack_isEmpty())
+			{
+				stack_push(*infix);
+				postfix[k] = ' ';
+				k++;
+				
+			}
+			else
+			{
+				if(precedenceLevel(*infix) < precedenceLevel(stack_peek()))
+				{
+					while(!stack_isEmpty())
+					{
+						postfix[k] = stack_pop();
+						k++;
+					}
+					stack_push(*infix);
+				}
+				else if(precedenceLevel(*infix) == precedenceLevel(stack_peek()))
+				{
+					postfix[k] = stack_pop();
+					stack_push(*infix);
+					k++;
+				}
+				else if(precedenceLevel(*infix) > precedenceLevel(stack_peek()))
+				{
+					stack_push(*infix);
+					postfix[k] = ' ';
+					k++;
+				}
+			}
+		}
+		infix++;
+	}
+	while(!stack_isEmpty())
+	{
+		postfix[strlen(postfix)] = stack_pop();
+	}
+	printf("%s\n", postfix);
+	int tt = 0;
+	for(y=0; y<strlen(postfix); y++)
+	{
+		memset(cc, 0, sizeof(cc));
+		if(!isOperator(postfix[y]))
+		{
+			if(postfix[y] != ' ')
+			{
+				ncc[tt] = postfix[y];
+				strcat(cc, ncc);
+				tt++;
+				if(postfix[y+1] != ' ')
+				{
+					if(isOperator(postfix[y+1]))
+					{
+						intStack_push(atoi(cc));
+						printf("v%d\n", atoi(cc));
+						tt = 0;
+						memset(ncc, 0, sizeof(ncc));
+					}
+				}
+				else
+				{
+					int ic = atoi(cc);
+					intStack_push(ic);
+					printf("d%d\n", ic);
+					tt = 0;
+					memset(ncc, 0, sizeof(ncc));
+				}
+			}
+		}
+		else
+		{
+			if(postfix[y] == '*')
+			{
+				int m1 = intStack_pop();
+				int m2 = intStack_pop();
+				int m1_m2 = m2 * m1;
+				intStack_push(m1_m2);
+			}
+			else if(postfix[y] == '+')
+			{
+				int a1 = intStack_pop();
+				int a2 = intStack_pop();
+				int a1_a2 = a2 + a1;
+				intStack_push(a1_a2);
+			}
+			else if(postfix[y] == '/')
+			{
+				float d1 = (float)intStack_pop();
+				float d2 = (float)intStack_pop();
+				float d1_d2 = d2/d1;
+				intStack_push((int)d1_d2);
+			}
+			else if(postfix[y] == '-')
+			{
+				int s1 = intStack_pop();
+				int s2 = intStack_pop();
+				int s1_s2 = s2 - s1;
+				intStack_push(s1_s2);
+			}
+
+		}
+	}
+	while(!intStack_isEmpty())
+	{
+		printf("h%d\n", intStack_pop());
+	}
+	return 0;
+	}
+
+int precedenceLevel(char op)
+{
+	int pre_level = 0;
+	switch (op) {
+		case '+':
+			pre_level = 1;
+			break;
+		case '-':
+			pre_level = 1;
+			break;
+		case '*':
+			pre_level = 2;
+			break;
+		case '/':
+			pre_level = 2;
+			break;
+		default:
+			pre_level = 0;
+			break;
+	}
+	return pre_level;
+	}
+
+bool isOperator(char op)
+{
+	bool b = false;
+	switch (op) {
+		case '+':
+			b = true;
+			break;
+		case '-':
+			b = true;
+			break;
+		case '*':
+			b = true;
+			break;
+		case '/':
+			b = true;
+			break;
+		default:
+			b = false;
+			break;
+	}
+	return b;
+	}

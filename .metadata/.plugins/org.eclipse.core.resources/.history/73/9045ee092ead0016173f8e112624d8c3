@@ -1,0 +1,177 @@
+#include <stdio.h>
+#include <stdbool.h>
+#include <stdlib.h>
+#include "arrayStack.h"
+
+
+
+//bool stack_isEmpty();
+//bool stack_isFull();
+//char stack_peek();
+//bool stack_push(char data);
+//char stack_pop();
+//int stack_size();
+
+bool isOperator(char op);
+int precedenceLevel(char op);
+
+
+char *infix = "29*2/3+5-7*5";
+char postfix[MAXSIZE] = {};
+
+int main()
+{
+	int i = 0, k = 0;
+	for(i=0; i<12; i++)
+	{
+		if(!isOperator(*infix))
+		{
+			postfix[k] = *infix;
+		}
+		else
+		{
+			printf("sahfbsdj- %d\n", stack_isEmpty(ptr_counter));
+			if(stack_isEmpty(ptr_counter))
+			{
+				stack_push(ptr_counter, *infix, arr_ptr);
+			}
+			else
+			{
+				if(precedenceLevel(*infix) < precedenceLevel(stack_peek(ptr_counter, arr_ptr)))
+				{
+					postfix[k] = stack_pop(ptr_counter, arr_ptr);
+					stack_push(ptr_counter, *infix, arr_ptr);
+				}
+				else if(precedenceLevel(*infix) == precedenceLevel(stack_peek(ptr_counter, arr_ptr)))
+				{
+					postfix[k] = stack_pop(ptr_counter, arr_ptr);
+					stack_push(ptr_counter, *infix, arr_ptr);
+				}
+				else if(precedenceLevel(*infix) > precedenceLevel(stack_peek(ptr_counter, arr_ptr)))
+				{
+					stack_push(ptr_counter, *infix, arr_ptr);
+				}
+			}
+		}
+		k++;
+		infix++;
+	}
+	while(!stack_isEmpty(ptr_counter))
+	{
+		postfix[k] = stack_pop(ptr_counter, arr_ptr);
+		k++;
+	}
+	int y = 0;
+	for(y = 0; y<MAXSIZE; y++)
+	{
+		printf("postfix[%d] - %c\n", y, postfix[y]);
+	}
+	return 0;
+	}
+
+int precedenceLevel(char op)
+{
+	int pre_level = 0;
+	switch (op) {
+		case '+':
+			pre_level = 1;
+			break;
+		case '-':
+			pre_level = 1;
+			break;
+		case '*':
+			pre_level = 2;
+			break;
+		case '/':
+			pre_level = 2;
+			break;
+		default:
+			pre_level = 0;
+			break;
+	}
+	return pre_level;
+	}
+
+bool isOperator(char op)
+{
+	bool b = false;
+	switch (op) {
+		case '+':
+			b = true;
+			break;
+		case '-':
+			b = true;
+			break;
+		case '*':
+			b = true;
+			break;
+		case '/':
+			b = true;
+			break;
+		default:
+			b = false;
+			break;
+	}
+	return b;
+	}
+//
+//
+//bool stack_isEmpty()
+//{
+//	bool b = false;
+//	if(pointer_counter == MAXSIZE)
+//	{
+//		b = true;
+//	}
+//	return b;
+//	}
+//
+//bool stack_isFull()
+//{
+//	bool b = false;
+//	if(pointer_counter == 0)
+//	{
+//		b = true;
+//	}
+//	return b;
+//	}
+//
+//char stack_peek()
+//{
+//	char data;
+//	if(!stack_isEmpty())
+//	{
+//		array_ptr++;
+//		data = *array_ptr;
+//		array_ptr--;
+//	}
+//	return data;
+//	}
+//
+//bool stack_push(char data)
+//{
+//	bool b = false;
+//	if(!stack_isFull())
+//	{
+//		*array_ptr = data;
+//		array_ptr--;
+//		pointer_counter--;
+//		b = true;
+//	}
+//	return b;
+//	}
+//
+//char stack_pop()
+//{
+//	char data;
+//	array_ptr++;
+//	pointer_counter++;
+//	data = *array_ptr;
+//	*array_ptr = 0;
+//	return data;
+//	}
+//
+//int stack_size()
+//{
+//	return MAXSIZE - pointer_counter;
+//	}

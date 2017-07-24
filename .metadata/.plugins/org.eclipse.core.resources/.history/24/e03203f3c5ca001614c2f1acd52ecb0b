@@ -1,0 +1,173 @@
+#include <stdio.h>
+#include <stdbool.h>
+#include <stdlib.h>
+
+void linkedList_print();
+void linkedList_insertNode(int key, int data);
+struct node* linkedList_deleteNode();
+bool linkedList_isEmpty();
+int linkedList_length();
+int linkedList_find(int key);
+struct node* linkedList_delete(int key);
+void linkedList_sort();
+void linkedList_reverse();
+
+struct node
+{
+	int key;
+	int data;
+	struct node *next;
+	};
+
+struct node *head = NULL;
+struct node *current = NULL;
+
+int main()
+{
+	linkedList_insertNode(6,0);
+	linkedList_insertNode(7,1);
+	linkedList_print();
+	linkedList_insertNode(3, 2);
+	linkedList_print();
+	linkedList_insertNode(9,1976);
+	//linkedList_deleteNode();
+	linkedList_print();
+//	linkedList_isEmpty();
+	printf("%d\n", linkedList_length());
+	linkedList_sort();
+	linkedList_print();
+	linkedList_reverse();
+	linkedList_print();
+	//printf("%d\n", linkedList_find(9));
+	//linkedList_deleteNode();
+	//linkedList_print();
+	//linkedList_find(3);
+//	linkedList_delete(3);
+//	linkedList_print();
+//	linkedList_delete(7);
+//	linkedList_print();
+	return 0;
+	}
+
+void linkedList_print()
+{
+	printf("[");
+	struct node *node_ptr = head;
+	while (node_ptr != NULL)
+	{
+		printf("(%d, %d)", node_ptr->key, node_ptr->data);
+		node_ptr = node_ptr->next;
+	}
+	printf("]\n");
+	}
+
+void linkedList_insertNode(int key, int data)
+{
+	struct node *node_ptr = (struct node *)malloc((sizeof(struct node)));
+	node_ptr->key = key;
+	node_ptr->data = data;
+	node_ptr->next = head;
+	head = node_ptr;
+	}
+
+struct node* linkedList_deleteNode()
+{
+	struct node *popped_node = head;
+	head = popped_node->next;
+	return popped_node;
+	}
+
+bool linkedList_isEmpty()
+{
+	bool b = false;
+	struct node *node_ptr = head;
+	if (node_ptr == NULL)
+	{
+		b = true;
+	}
+	return b;
+	}
+
+int linkedList_length()
+{
+	int length = 0;
+	struct node *node_ptr = head;
+	while(node_ptr != NULL)
+	{
+		length++;
+		node_ptr = node_ptr->next;
+	}
+
+	return length;
+	}
+
+int linkedList_find(int key)
+{
+	struct node *node_ptr = head;
+	while(node_ptr->key != key)
+	{
+		node_ptr = node_ptr->next;
+	}
+	int val = node_ptr->data;
+	return val;
+	}
+
+struct node* linkedList_delete(int key)
+{
+	struct node *node_ptr = head;
+	struct node *previous_node = NULL;
+	while(node_ptr->key != key)
+	{
+		previous_node = node_ptr;
+		node_ptr = node_ptr->next;
+	}
+	current = node_ptr;
+	if(current == head)
+	{
+		head = current->next;
+	}
+	else
+	{
+		previous_node->next = current->next;
+	}
+	return current;
+	}
+
+
+void linkedList_sort()
+{
+	struct node* node_ptr = head;
+	struct node* next_node_ptr = NULL;
+	int tempData, tempKey;
+	do
+	{
+		next_node_ptr = node_ptr->next;
+		if(node_ptr->key > next_node_ptr->key)
+		{
+			tempKey = node_ptr->key;
+			node_ptr->key = next_node_ptr->key;
+			next_node_ptr->key = tempKey;
+
+			tempData = node_ptr->data;
+			node_ptr->data = next_node_ptr->data;
+			next_node_ptr->data = tempData;
+		}
+		node_ptr = node_ptr->next;
+	}
+	while(node_ptr->next != NULL);
+	}
+
+void linkedList_reverse()
+{
+	struct node* prev = NULL;
+	struct node* current = head;
+	struct node* next = NULL;
+	while(current != NULL)
+	{
+		next = current->next;
+		current->next = prev;
+		prev = current;
+		current = next;
+	}
+	head = prev;
+	}

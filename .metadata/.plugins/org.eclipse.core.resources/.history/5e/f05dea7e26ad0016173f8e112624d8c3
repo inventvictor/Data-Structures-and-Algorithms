@@ -1,0 +1,22 @@
+/*
+ * arrayStack.h
+ *
+ *  Created on: Nov 18, 2016
+ *      Author: inventor
+ */
+#include <stdio.h>
+#include <stdbool.h>
+
+#ifndef ARRAYSTACK_H_
+#define ARRAYSTACK_H_
+
+#define MAXSIZE 25
+
+bool stack_isEmpty();
+bool stack_isFull();
+char stack_peek(int *arr_ptr);
+bool stack_push(char data, int *arr_ptr);
+char stack_pop(int *arr_ptr);
+int stack_size();
+
+#endif /* ARRAYSTACK_H_ */

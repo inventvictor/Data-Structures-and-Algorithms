@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item value="false" key="isRegEx"/>
+		<item value="" key="selection"/>
+		<item value="true" key="casesensitive"/>
+		<item value="false" key="incremental"/>
+		<item value="true" key="wrap"/>
+		<item value="false" key="wholeword"/>
+		<list key="findhistory">
+			<item value="free"/>
+			<item value="#include &lt;stdlib.h&gt;"/>
+			<item value="ESPTOOL_ARGS"/>
+			<item value="write_flash"/>
+			<item value="sockaddr_in"/>
+			<item value="main"/>
+		</list>
+		<list key="replacehistory">
+		</list>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item value="293" key="DIALOG_WIDTH"/>
+		<item value="1|Ubuntu|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
+		<item value="504" key="DIALOG_HEIGHT"/>
+		<item value="145" key="DIALOG_X_ORIGIN"/>
+		<item value="83" key="DIALOG_Y_ORIGIN"/>
+	</section>
+</section>

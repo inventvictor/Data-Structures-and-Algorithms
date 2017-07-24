@@ -1,0 +1,161 @@
+#include <stdio.h>
+#include <stdbool.h>
+#include <stdlib.h>
+#include "arrayStack.h"
+
+
+void solve_postfix(char *postfix, int length);
+
+bool isOperator(char op);
+int precedenceLevel(char op);
+
+
+char *infix = "23*5+8-9";
+char postfix[MAXSIZE] = {};
+char *jg;
+
+int main()
+{
+	int i = 0, k = 0, y = 0;
+	int g = strlen(infix);
+	for(i=0; i<g; i++)
+	{
+		if(!isOperator(*infix))
+		{
+			postfix[k] = *infix;
+			k++;
+		}
+		else
+		{
+			if(stack_isEmpty())
+			{
+				stack_push(*infix);
+				postfix[k] = ' ';
+				k++;
+			}
+			else
+			{
+				if(precedenceLevel(*infix) < precedenceLevel(stack_peek()))
+				{
+					while(!stack_isEmpty())
+					{
+						postfix[k] = stack_pop();
+						k++;
+					}
+					stack_push(*infix);
+				}
+				else if(precedenceLevel(*infix) == precedenceLevel(stack_peek()))
+				{
+					stack_push(*infix);
+					postfix[k] = ' ';
+					k++;
+				}
+				else if(precedenceLevel(*infix) > precedenceLevel(stack_peek()))
+				{
+					stack_push(*infix);
+					postfix[k] = ' ';
+					k++;
+				}
+			}
+		}
+		infix++;
+	}
+	while(!stack_isEmpty())
+	{
+		postfix[strlen(postfix)] = stack_pop();
+	}
+//	for(y = 0; y<27; y++)
+//	{
+//		printf("postfix[%d] - %c\n", y, postfix[y]);
+//	}
+	jg = (char *)malloc(MAXSIZE * sizeof(char));
+	strcpy(jg, postfix);
+	printf("%s\n", jg);
+	solve_postfix(jg, 10);
+	printf("victor");
+	return 0;
+	}
+
+int precedenceLevel(char op)
+{
+	int pre_level = 0;
+	switch (op) {
+		case '+':
+			pre_level = 1;
+			break;
+		case '-':
+			pre_level = 1;
+			break;
+		case '*':
+			pre_level = 2;
+			break;
+		case '/':
+			pre_level = 2;
+			break;
+		default:
+			pre_level = 0;
+			break;
+	}
+	return pre_level;
+	}
+
+bool isOperator(char op)
+{
+	bool b = false;
+	switch (op) {
+		case '+':
+			b = true;
+			break;
+		case '-':
+			b = true;
+			break;
+		case '*':
+			b = true;
+			break;
+		case '/':
+			b = true;
+			break;
+		default:
+			b = false;
+			break;
+	}
+	return b;
+	}
+
+void solve_postfix(char *postfix, int length)
+{
+	int i = 0;
+	for(i = 0; i<length; i++)
+	{
+		if(!isOperator(*postfix) && *postfix != ' ')
+		{
+			stack_push(*postfix);
+		}
+		else if(isOperator(*postfix) && stack_size() >= 2)
+		{
+			if(*postfix == '*')
+			{
+				char charVal1 = stack_pop();
+				float f1 = atof(charVal1);
+				char charVal2 = stack_pop();
+				float f2 = atof(charVal2);
+				float f1_f2 = f1 * f2;
+				stack_push(f1_f2+' ');
+			}
+			if(*postfix == '+')
+			{
+				char charVal1 = stack_pop();
+				float f1 = atof(charVal1);
+				char charVal2 = stack_pop();
+				float f2 = atof(charVal2);
+				float f1_f2 = f1 + f2;
+				stack_push(f1_f2+' ');
+			}
+		}
+		postfix++;
+	}
+	while(!stack_isEmpty())
+	{
+		printf("Answer is %c\n", stack_pop());
+	}
+	}

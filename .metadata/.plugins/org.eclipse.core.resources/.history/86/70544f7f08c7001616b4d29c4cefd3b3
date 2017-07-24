@@ -1,0 +1,37 @@
+/*
+ * hash_table.c
+ *
+ *  Created on: Dec 20, 2016
+ *      Author: inventor
+ */
+
+#include <stdio.h>
+#include <stdbool.h>
+#include <stdlib.h>
+
+#define ARRAYSIZE 20
+
+struct item dataItem;
+int hashCode(int key);
+
+
+
+struct item
+{
+	int key;
+	int value;
+	};
+struct item hashArray[ARRAYSIZE] = {};
+int main()
+{
+	printf("Hello Victor");
+	return 0;
+	}
+
+int hashCode(int key)
+{
+	return key % ARRAYSIZE;
+	}
+
+
+

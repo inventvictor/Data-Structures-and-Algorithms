@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item value="2" key="org.eclipse.egit.ui.internal.clone.GitSelectWizardPageWizardSel"/>
+	<item value="654" key="DIALOG_WIDTH"/>
+	<item value="1|Ubuntu|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
+	<item value="/home/inventor/git/esp-open-rtos/.git" key="GitSelectRepositoryPage.lastRepository"/>
+	<item value="547" key="DIALOG_HEIGHT"/>
+	<item value="357" key="DIALOG_X_ORIGIN"/>
+	<item value="22" key="DIALOG_Y_ORIGIN"/>
+	<list key="RepositorySelectionPage.UsedUris">
+		<item value="https://github.com/SuperHouse/esp-open-rtos.git"/>
+		<item value="https://github.com/nkolban/Sample-ESP8266-App.git"/>
+	</list>
+	<section name="GitImportWizard">
+		<item value="true" key="GitProjectsImportPage.STORE_NESTED_PROJECTS"/>
+	</section>
+</section>

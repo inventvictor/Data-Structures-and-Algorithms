@@ -1,0 +1,7 @@
+09:39:37 **** Clean-only build of configuration Debug for project Circular_Doubly_Linked_List_Algos ****
+make clean 
+rm -rf  ./circular_doubly_linked_list_alogs.o  ./circular_doubly_linked_list_alogs.d  Circular_Doubly_Linked_List_Algos
+ 
+
+09:39:37 Build Finished (took 119ms)
+

@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Delete resource &apos;Search_Techniques/linear_search&apos;" deleteContents="false" description="Delete resource &apos;Search_Techniques/linear_search&apos;" element1="/Search_Techniques/linear_search" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1481994058895"/>&#x0A;<refactoring comment="Rename resource &apos;Search_Techniques&apos; to &apos;Linear_Search&apos;" description="Rename resource &apos;Search_Techniques&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/Search_Techniques" name="Linear_Search" stamp="1481995580783" updateReferences="true"/>
+</session>

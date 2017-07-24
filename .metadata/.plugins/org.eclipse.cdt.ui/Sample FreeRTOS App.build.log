@@ -1,0 +1,14 @@
+13:05:58 **** Build of configuration Default for project Sample FreeRTOS App ****
+make all 
+xtensa-lx106-elf-gcc -Wimplicit-function-declaration -fno-inline-functions -mlongcalls -mtext-section-literals -ffunction-sections -fdata-sections -mno-serialize-volatile -I/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/include/espressif -I/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/include/lwip -I/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/include/lwip/ipv4 -I/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/include/lwip/ipv6 -I/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/include -I/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/extra_include -I. -D__ETS__ -DICACHE_FLASH -DXTENSA -DUSE_US_TIMER -c user_main.c
+xtensa-lx106-elf-gcc -Wimplicit-function-declaration -fno-inline-functions -mlongcalls -mtext-section-literals -ffunction-sections -fdata-sections -mno-serialize-volatile -I/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/include/espressif -I/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/include/lwip -I/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/include/lwip/ipv4 -I/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/include/lwip/ipv6 -I/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/include -I/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/extra_include -I. -D__ETS__ -DICACHE_FLASH -DXTENSA -DUSE_US_TIMER -c uart.c
+uart.c: In function 'UART_SetBaudrate':
+uart.c:238:5: warning: implicit declaration of function 'uart_div_modify' [-Wimplicit-function-declaration]
+     uart_div_modify(uart_no, UART_CLK_FREQ / baud_rate);
+     ^
+xtensa-lx106-elf-gcc -o a.out -nostdlib -L/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/lib -L/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/ld -T/home/inventor/esp8266/esp-open-sdk/ESP8266_RTOS_SDK-master/ld/eagle.app.v6.ld -Wl,--no-check-sections -u call_user_start -Wl,-static -Wl,--start-group -lminic -lgcc -lhal -lphy -lpp -lnet80211 -lwpa -lcrypto -lmain -lfreertos -llwip user_main.o uart.o -Wl,--end-group
+esptool -eo a.out -bo sampleESP8266App_0x00000.bin -bs .text -bs .data -bs .rodata -bs .iram0.text -bc -ec || true
+esptool -eo a.out -es .irom0.text sampleESP8266App_0x40000.bin -ec || true
+
+13:05:59 Build Finished (took 672ms)
+

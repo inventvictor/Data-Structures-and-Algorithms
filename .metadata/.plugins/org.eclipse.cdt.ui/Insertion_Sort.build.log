@@ -1,0 +1,7 @@
+09:39:37 **** Clean-only build of configuration Debug for project Insertion_Sort ****
+make clean 
+rm -rf  ./insertion_sort.o  ./insertion_sort.d  Insertion_Sort
+ 
+
+09:39:37 Build Finished (took 78ms)
+

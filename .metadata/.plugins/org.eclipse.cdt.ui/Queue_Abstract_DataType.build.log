@@ -1,0 +1,7 @@
+09:39:38 **** Clean-only build of configuration Debug for project Queue_Abstract_DataType ****
+make clean 
+rm -rf  ./queue_adt.o  ./queue_adt.d  Queue_Abstract_DataType
+ 
+
+09:39:38 Build Finished (took 66ms)
+

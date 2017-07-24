@@ -1,0 +1,7 @@
+09:39:38 **** Clean-only build of configuration Debug for project Merge_Sort ****
+make clean 
+rm -rf  ./merge_sort.o  ./merge_sort.d  Merge_Sort
+ 
+
+09:39:38 Build Finished (took 76ms)
+

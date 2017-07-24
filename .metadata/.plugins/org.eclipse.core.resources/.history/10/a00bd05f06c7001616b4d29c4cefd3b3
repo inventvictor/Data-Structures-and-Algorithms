@@ -1,0 +1,16 @@
+/*
+ * hash_table.c
+ *
+ *  Created on: Dec 20, 2016
+ *      Author: inventor
+ */
+
+#include <stdio.h>
+#include <stdbool.h>
+
+int main()
+{
+	printf("Hello Victor");
+	return 0;
+	}
+

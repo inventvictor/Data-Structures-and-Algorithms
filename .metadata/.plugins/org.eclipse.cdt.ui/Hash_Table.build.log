@@ -1,0 +1,7 @@
+09:39:37 **** Clean-only build of configuration Debug for project Hash_Table ****
+make clean 
+rm -rf  ./hash_table.o  ./hash_table.d  Hash_Table
+ 
+
+09:39:37 Build Finished (took 65ms)
+

@@ -1,0 +1,15 @@
+13:52:18 **** Build of configuration Debug for project Stack_Abstract_DataType ****
+make all 
+Building file: ../stack_adt.c
+Invoking: Cross GCC Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"stack_adt.d" -MT"stack_adt.d" -o "stack_adt.o" "../stack_adt.c"
+Finished building: ../stack_adt.c
+ 
+Building target: Stack_Abstract_DataType
+Invoking: Cross GCC Linker
+gcc  -o "Stack_Abstract_DataType"  ./stack_adt.o   
+Finished building target: Stack_Abstract_DataType
+ 
+
+13:52:18 Build Finished (took 180ms)
+

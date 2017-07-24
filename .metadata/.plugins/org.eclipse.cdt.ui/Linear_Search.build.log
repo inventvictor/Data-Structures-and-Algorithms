@@ -1,0 +1,15 @@
+14:04:31 **** Build of configuration Debug for project Linear_Search ****
+make all 
+Building file: ../linear_search.c
+Invoking: Cross GCC Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"linear_search.d" -MT"linear_search.d" -o "linear_search.o" "../linear_search.c"
+Finished building: ../linear_search.c
+ 
+Building target: Linear_Search
+Invoking: Cross GCC Linker
+gcc  -o "Linear_Search"  ./linear_search.o   
+Finished building target: Linear_Search
+ 
+
+14:04:32 Build Finished (took 166ms)
+
