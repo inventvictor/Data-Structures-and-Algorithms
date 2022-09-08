@@ -8,7 +8,10 @@ Data Structures used includes;
 #### Arrays
 Searching Algos -> Binary Search, Linear search, Interpolation search, etc
 
-Sorting Algos -> Bubble sort, Selection sort, Quick sort *(not done yet)*, Merge sort *(not done yet)*
+Sorting Algos -> 
+Bubble sort, Selection sort, 
+Quick sort *(not done yet)*,
+Merge sort *(not done yet)*
 #### Linked-Lists
 Singly Linked-Lists
 
@@ -27,8 +30,6 @@ Used Arrays and Linked-Lists to implement Queues
 
 
 #### Bunch of the code was written using Eclipse IDE.
-
-### With Love from Ife, Osun State
 
 
 
